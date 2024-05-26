@@ -1,0 +1,324 @@
+/*--------Basic styles-------*/
+
+html{
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+label{
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #22262A;
+    color: #22262A;
+}
+
+#registration_form {
+    margin: 0 auto;
+    background: #E7F5F8;
+    width: 700px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+}
+
+:root {
+    --bg-color-section: #FAFAFA;
+    --bg-comments-color: #DADADA;
+    --bg-color: #FFF;
+    --text-color: #22262A;
+    --text-error-color: #fc6262;
+    --text-red-color: #FF5634;
+    --white-color: #FFF;
+}
+
+.flex {
+    display: flex;
+}
+
+.space_between {
+    justify-content: space-between;
+}
+
+
+input {
+    height: 40px;
+    width: 385px;
+    border-radius: 20px/20px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    color: var(--text-color);
+    padding-left: 15px;
+}
+
+input:focus {
+    border: 2px solid #22262A;
+}
+
+
+.group {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.label_text {
+    width: 250px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*--------Error styles--------*/
+
+.field_error {
+    box-shadow: 1px 1px 1px var(--text-error-color);
+}
+
+.error_message {
+    color: var(--text-error-color);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.input_fields {
+    width: 300px;
+}
+
+
+
+.btn_password {
+    position: absolute;
+    width: 40px;
+    height: auto;
+    right: 5px;
+    top: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    opacity: .4;
+    cursor: pointer;
+}
+
+.btn_password.active_password_btn {
+    opacity: 1;
+}
+
+.random_btn {
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: var(--text-color);
+    color: var(--white-color);
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    text-decoration: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.registration {
+    cursor: pointer;
+    padding: 10px 30px;
+    height: 55px;
+    background-color: #22262A;
+    color: var(--white-color);
+    text-align: center;
+    text-decoration: uppercase;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.registration.active_registration {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* button.registration:hover {
+    opacity: .8;
+    font-weight: bold;
+    transform: scale(1.1);
+} */
+
+button.registration:disabled {
+    background-color: #cccccc; /* Серый цвет фона */
+    color: #666666; /* Серый цвет текста */
+    cursor: not-allowed; /* Указатель мыши при наведении */
+    opacity: 0.6; /* Уменьшаем прозрачность */
+  }
+
+
+.modal_overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal {
+    background-color: #FFF;
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+
+.modal_overlay--visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal--visible {
+    display: block;
+}
+
+.modal_1 {
+    position: relative;
+}
+
+.close-button {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.user_agreement_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#user-agreement {
+    height: 350px;
+    width: 100%;
+    overflow-y: scroll;
+    resize: none;
+    border: none;
+}
+
+.user_agreement_h2 {
+    text-align: center;
+}
+
+.div_checkbox{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: none;
+}
+
+/* Скрытие стандартного чекбокса */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Кастомный чекбокс */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+/* При включении чекбокса */
+.checkbox-container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Создание кастомной метки чекбокса */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Отображение метки чекбокса при включении */
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Стиль метки чекбокса */
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.div_btn_agreement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_agreement{
+    margin-top: 10px;
+}

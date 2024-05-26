@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="registration/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+    <form id="registration_form" action="">
+        <h1>Registration</h1>
+        <div class="group">
+            <div class="label_text">
+                <label for="phone">Telephone</label>
+            </div>
+            <div class="input_div"><input type="text" name="phone" id="phone"></div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Email</label>
+            </div>
+            <div class="input_div"><input type="email" id="email"></div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Date of birth</label>
+            </div>
+            <div class="input_div"><input type="text" class="date"></div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Name</label>
+            </div>
+            <div class="input_div"><input type="text" id="name"></div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Last name</label>
+            </div>
+            <div class="input_div"><input type="text" id="last_name"></div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Middle name</label>
+            </div>
+            <div class="input_div"><input type="text" id="middle_name"></div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Nickname</label>
+            </div>
+            <div class="input_div">
+                <input type="text" id="nick">
+                <button type="button" class="random_btn" data-target="random_generate_nick">Generate nickname</button>
+            </div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Password</label>
+            </div>
+            <div class="input_div">
+                <input type="password" id="first_password">
+                <button type="button" class="btn_password" data-target="#first_password">
+                    <img src="/registration/data/close_eye.svg">
+                </button>
+                <button type="button" class="random_btn" data-target="random_generate_password">Generate
+                    password</button>
+            </div>
+        </div>
+        <div class="group">
+            <div class="label_text">
+                <label for="">Repeat the password</label>
+            </div>
+            <div class="input_div">
+                <input type="password" id="second_password" onpaste="return false;">
+                <button type="button" class="btn_password" data-target="#second_password">
+                    <img src="/registration/data/open_eye.svg">
+                </button>
+            </div>
+        </div>
+        <div class="group">
+            <button class="registration" disabled>Registration</button>
+            <a class="license">User agreement</a>
+            <button type="button" class="log_in_button" onclick="switchPageOnAuthorization()">Log In</button>
+            <button type="button" class="back_on_previous_page" onclick="goBack()">Go back</button>
+        </div>
+        <div class="modals">
+            <div class="modal_overlay">
+                <div class="modal modal_1">
+                    <span class="close-button">x</span>
+                    <h2 class="user_agreement_h2">User agreement</h2>
+                    <div class="user_agreement_div">
+                        <textarea id="user-agreement" rows="6" readonly>
+                          </textarea>
+                    </div>
+                    <div class="div_checkbox">
+                        <label class="checkbox-container">
+                            I agree to the terms of the user agreement
+                            <input type="checkbox" id="agree_user_agreement">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="div_btn_agreement">
+                        <button class="btn_agreement" type="button" disabled onclick="activeBtnReg()">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="registration/js/phone.js"></script>
+    <script src="registration/js/date.js"></script>
+    <script src="registration/js/validation.js"></script>
+    <script src="registration/js/password.js"></script>
+    <script src="registration/js/random_generate.js"></script>
+    <script src="registration/js/roles.js"></script>
+    <script src="registration/js/modals.js"></script>
+    <script src="registration/js/user_agreement.js"></script>
+</body>
+
+</html>

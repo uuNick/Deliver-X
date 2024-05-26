@@ -1,0 +1,285 @@
+@import url('./fonts.css');
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.header_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 12em;
+    max-width: 122.2em;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+/*--------Поиск объектов------*/
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.input-field {
+    padding: 10px 15px;
+    padding-right: 100px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #ff6633;
+}
+
+.submit-button {
+    position: absolute;
+    right: 10px;
+    padding: 5px 8px;
+    margin: 0;
+    margin-top: auto;
+    border: none;
+    border-radius: .75rem;
+    display: block;
+    font-size: 14px;
+    color: black;
+    transform-origin: center center;
+    transition: 0.2s;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.submit-button:hover{
+    transform: scale(1.2);
+}
+
+/*-----------------Каталог товаров-------------------*/
+
+.drop_down {
+    position: relative;
+    display: inline-block;
+}
+
+.drop_down_content {
+    display: none;
+    position: absolute;
+    right: -48px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.drop_down_content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.drop_down_content p:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.show_footer_menu {
+    display: block;
+}
+
+.drop_button {
+    background-color: #F2F8FC;
+    border: none;
+}
+
+.drop_button:hover {
+    background-color: #8c949d;
+}
+
+
+/*---------Корзина----------*/
+
+.basket_inner {
+    position: relative;
+}
+
+.basket_count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    border-radius: 50%;
+    background-color: #ff3b30;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    min-width: 25px;
+}
+
+.header_icons {
+    /* width: 100px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 60px auto;
+}
+
+.btn_num {
+    font-size: 1.8em;
+    margin: 0 5px;
+}
+
+.number_num {
+    font-size: 2.4em;
+    margin: 0 20px;
+}
+
+.card {
+    width: 225px;
+    height: 380px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.card_top {
+    flex: 0 0 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card_image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.2s;
+}
+
+.card_image:hover>img {
+    transform: scale(1.1);
+}
+
+.card_bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    padding: 10px;
+}
+
+.card_prices {
+    display: flex;
+    flex: 0 0 20%;
+}
+
+.card_price::after {
+    content: "р";
+    margin-left: 4px;
+    position: relative;
+}
+
+
+.card_price--common {
+    font-weight: 400;
+    font-size: 18px;
+    color: #606060;
+}
+
+.card_price--common::before {
+    content: "Цена";
+    font-weight: 400;
+    font-size: 20px;
+    color: #767272;
+    margin-right: 105px;
+}
+
+.card_title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #414141;
+}
+
+.card_title:hover {
+    color: #ff6633;
+}
+
+.card_add {
+    padding: 10px 20px;
+    margin: 0;
+    margin-top: auto;
+    border: 1px solid #ededed;
+    border-radius: .75rem;
+    display: block;
+    font-size: 17px;
+    color: black;
+    transform-origin: center center;
+    transition: 0.2s;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.card_add:hover,
+.card_add.active {
+    border: 1px solid #ff6633;
+    background-color: #ff6633;
+    color: #fff;
+}

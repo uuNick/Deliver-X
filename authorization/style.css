@@ -1,0 +1,175 @@
+/*---------Basic styles----------*/
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+:root {
+    --bg-color-section: #FAFAFA;
+    --bg-comments-color: #DADADA;
+    --bg-color: #FFF;
+    --text-color: #22262A;
+    --text-error-color: #fc6262;
+    --text-red-color: #FF5634;
+    --white-color: #FFF;
+}
+
+
+h1{
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--text-color);
+    color:  var(--text-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#registration_form{
+    background: #FAFAFA;
+    max-width: 700px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 200px auto;
+}
+
+button {
+    padding: 1em 2em;
+    margin: 1em;
+    border: 1px solid #ededed;
+    background-color: transparent;
+    border-radius: .75rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6em;
+    color: var(--text-color);
+    transform-origin: center center;
+    transition: 240ms ease-out;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--text-red-color);
+    color: var(--white-color);
+}
+input{
+    height: 40px;
+    width: 385px;
+    border-radius: 20px/20px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    color: #22262A;
+    padding-left: 15px;
+}
+
+.flex{
+    display: flex;
+}
+
+.space_between{
+    justify-content: space-between;
+}
+
+label{
+    text-transform: uppercase;
+}
+
+/*-------------Input Buttons styles---------------*/
+
+.input_buttons{
+    flex-direction: column;
+}
+
+/*------------Input field + text label div---------------*/
+.group{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.label_text{
+    width: 250px;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1.6em;
+}
+
+input:focus{
+    border: 2px solid #22262A;
+}
+
+.input_div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input_fields{
+    width: 300px;
+}
+
+
+/*--------------Error styles---------------*/
+
+.field_error{
+    box-shadow: 1px 1px 1px var(--text-error-color);
+}
+
+.error_message{
+    color: var(--text-error-color);
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+
+/*-----------Choose authorization way styles----------*/
+
+
+
+
+/* .btn_password{
+    position: absolute;
+    width: 40px;
+    height: auto;
+    right: 5px;
+    top: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    opacity: .4;
+    cursor: pointer;
+}
+
+.btn_password.active_password_btn{
+    opacity: 1;
+} */
+
+
+.authorisation{
+    cursor: pointer;
+    padding: 10px 30px;
+    height: 55px;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: uppercase;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+button.authorisation:hover{
+    opacity: .8;
+    font-weight: bold;
+    transform: scale(1.1);
+}

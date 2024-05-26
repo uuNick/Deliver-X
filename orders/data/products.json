@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "title": "Барбекю бургер",
+        "price": "8.90",
+        "img": "./images/burger_1.png",
+        "type": "burger"
+    }, 
+    {
+        "id": 2,
+        "title": "Биг Сандрес бургер",
+        "price": "12.90",
+        "img": "./images/burger_2.jpg",
+        "type": "burger"
+    },
+    {
+        "id": 3,
+        "title": "Сандрес бургер де люкс",
+        "price": "10.90",
+        "img": "./images/burger_3.jpg",
+        "type": "burger"
+    }, 
+    {
+        "id": 4,
+        "title": "Шефбургер де люкс",
+        "price": "7.90",
+        "img": "./images/burger_4.png",
+        "type": "burger"
+    },
+    {
+        "id": 5,
+        "title": "Шефбургер джуниор острый",
+        "price": "5.50",
+        "img": "./images/burger_5.png",
+        "type": "burger"
+    }, 
+    {
+        "id": 6,
+        "title": "Чикенбургер",
+        "price": "3.70",
+        "img": "./images/burger_6.jpg",
+        "type": "burger"
+    },
+    {
+        "id": 7,
+        "title": "Лонгер",
+        "price": "3.10",
+        "img": "./images/burger_7.jpg",
+        "type": "burger"
+    },
+    {
+        "id": 8,
+        "title": "Чизбургер",
+        "price": "4.90",
+        "img": "./images/burger_8.png",
+        "type": "burger"
+    },
+    {
+        "id": 9,
+        "title": "Пицца Крейзи",
+        "price": "21.90",
+        "img": "./images/pizza_1.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 10,
+        "title": "Пицца Домашняя",
+        "price": "20.90",
+        "img": "./images/pizza_2.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 11,
+        "title": "Пицца Флорейтинский цыпленок",
+        "price": "18.90",
+        "img": "./images/pizza_3.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 12,
+        "title": "Пицца Двойная пепперони",
+        "price": "23.90",
+        "img": "./images/pizza_4.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 13,
+        "title": "Пицца Чизбургер",
+        "price": "19.90",
+        "img": "./images/pizza_5.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 14,
+        "title": "Пицца Горыныч",
+        "price": "19.90",
+        "img": "./images/pizza_6.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 15,
+        "title": "Пицца Цыпленок терияки",
+        "price": "21.90",
+        "img": "./images/pizza_7.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 16,
+        "title": "Пицца Семейная",
+        "price": "19.90",
+        "img": "./images/pizza_8.jpg",
+        "type": "pizza"
+    },
+    {
+        "id": 17,
+        "title": "Лимонад рефреш",
+        "price": "4.20",
+        "img": "./images/drink_1.png",
+        "type": "drink"
+    },
+    {
+        "id": 18,
+        "title": "Кока кола без сахара",
+        "price": "3.80",
+        "img": "./images/drink_2.png",
+        "type": "drink"
+    },
+    {
+        "id": 19,
+        "title": "Кока кола",
+        "price": "3.80",
+        "img": "./images/drink_3.png",
+        "type": "drink"
+    },
+    {
+        "id": 20,
+        "title": "Фанта",
+        "price": "3.80",
+        "img": "./images/drink_4.png",
+        "type": "drink"
+    },
+    {
+        "id": 21,
+        "title": "Спрайт",
+        "price": "3.80",
+        "img": "./images/drink_5.png",
+        "type": "drink"
+    },
+    {
+        "id": 22,
+        "title": "\"Бонаква\" без газа",
+        "price": "1.40",
+        "img": "./images/drink_6.png",
+        "type": "drink"
+    },
+    {
+        "id": 23,
+        "title": "\"Бонаква\" с газом",
+        "price": "1.40",
+        "img": "./images/drink_7.png",
+        "type": "drink"
+    },
+    {
+        "id": 24,
+        "title": "Айс кофе карамель",
+        "price": "4.20",
+        "img": "./images/drink_8.png",
+        "type": "drink"
+    }
+]

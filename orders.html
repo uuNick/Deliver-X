@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Restaurant</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/orders/css/styles.css">
+    <script src="orders/js/index.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header_wrapper">
+            <div class="drop_down">
+                <button class="drop_button">Каталог</button>
+                <div class="drop_down_content">
+                    <p class="drop_down_text ddt_1">Все</p>
+                    <p class="drop_down_text ddt_2">Бургеры</p>
+                    <p class="drop_down_text ddt_3">Напитки</p>
+                    <p class="drop_down_text ddt_4">Пиццы</p>
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <input type="text" placeholder="Введите текст" class="input-field">
+                    <button class="submit-button"><svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </g>
+                        </svg></button>
+                </div>
+            </div>
+            <div class="header_icons">
+                <a href="/basket.html">
+                    <div class="basket_inner">
+                        <svg width="38" height="38" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M.75-.02a.75.75 0 100 1.5l.408-.006 1.606 1.281 1.839 6.881L4.237 12a2 2 0 102.188 2.722l5.705.028a2 2 0 100-1.5l-5.705-.028a2.007 2.007 0 00-.722-.898l.438-2.632 7.933.027 1.91-7.715H4.227L1.683-.026 1.68-.02v-.005L.75-.02z"
+                                fill="#000"></path>
+                        </svg>
+                        <span class="basket_count">0</span>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <svg width="45" height="45" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.98 1.984l7 6h-2.003v6H9.96V10.97H5.997v3.016H2.982v-6H.979l7-6z" fill="#000"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="cards">
+
+            </div>
+            <div class="numeration">
+                <button type="button" class="btn_num btn_first_items">&laquo;</button>
+                <button type="button" class="btn_num previous_items">&lt;</button>
+                <span class="number_num">1</span>
+                <button type="button" class="btn_num btn_next_items">&gt;</button>
+                <button type="button" class="btn_num btn_last_items">&raquo;</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
