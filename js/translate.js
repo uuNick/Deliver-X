@@ -29,7 +29,6 @@ function setNeedBtn(){
 setNeedBtn();
 
 function checkPagePathName(){
-    console.log(currentPathName);
     switch(currentPathName){
         case "/index.html":
             currentTextObject = indexText;
@@ -67,7 +66,7 @@ function changeLang(){
         }
     }
     if(currentPathName == '/authorization.html'){
-        console.log(currentTextObject["placeholder_1"][currentLanguage]);
+        // console.log(currentTextObject["placeholder_1"][currentLanguage]);
         document.querySelector('.input_log_in_data').placeholder = currentTextObject["placeholder_1"][currentLanguage];
         document.querySelector('.password').placeholder = currentTextObject["placeholder_2"][currentLanguage];
     }

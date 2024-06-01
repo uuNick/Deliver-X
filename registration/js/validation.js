@@ -88,9 +88,9 @@ document.querySelectorAll('input').forEach(el => {
 
 document.getElementById('registration_form').addEventListener('submit', function (event) {
     event.preventDefault()
-    console.log(users)
+    console.log(users);
     if (checkValidation(this) == true) {
-        console.log("yes");
+        // console.log("yes");
         if (checkRepeatData(this, users) == false) {
             temp = localStorage.getItem("currentUser")
             let currentUser;
@@ -139,7 +139,6 @@ document.getElementById('registration_form').addEventListener('submit', function
                 }
                 localStorage.setItem("currentUser", JSON.stringify(user));
             }
-            document.querySelector('dialog_1').showModal()
             users.push(user);
             localStorage.setItem("users", JSON.stringify(users));
             goBack();
@@ -285,7 +284,7 @@ btnConfirm.addEventListener('click', activeBtnReg);
 
 function activeBtnReg() {
     btnReg.disabled = false;
-    modalOverlay.classList.remove('modal_overlay--visible');
+    document.querySelector(".modal_overlay").classList.remove('modal_overlay--visible');
     document.body.classList.remove('lock');
 }
 

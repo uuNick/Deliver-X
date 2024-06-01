@@ -56,7 +56,6 @@ function updatePageElements(currentUser) {
         btnDowloadForIos.style.display = 'none';
         btnDowloadForAndroid.style.display = 'none';
         btnRegistration_2.style.display = "none";
-        //textInModel_1.style.display = "none";
         btnAddRestaurant.style.display = "block"
         btnClearlocalStorage.style.display = "block"
     }
@@ -95,15 +94,27 @@ function updatePageElements(currentUser) {
 updatePageElements(currentUser);
 
 btnLogOut_1.addEventListener('click', logOutFunction);
-btnLogOut_2.addEventListener('click', logOutFunction);
+btnLogOut_2.addEventListener('click', closeBurger);
 
 function logOutFunction(event) {
     currentUser = "unauthorized";
     localStorage.setItem("currentUser", currentUser);
-    updatePageElements(currentUser)
+    updatePageElements(currentUser);
+    editWindowsRegAndAuthItems();
 }
 
-function editWindowsLogOutItems(){
+function closeBurger() {
+    const menu = document.querySelector('.body_menu');
+    const menuButton = document.querySelector('.menu_icon');
+    const menuGround = document.querySelector('.menu_overflow');
+    menu.classList.remove('active_burger_menu');
+    menuButton.classList.remove('active_burger_menu');
+    menuGround.classList.remove('show');
+    document.body.classList.remove('lock');
+    logOutFunction();
+}
+
+function editWindowsLogOutItems() {
     if (window.innerWidth < 768 && (btnLogOut_1.style.display == 'block')) {
         btnLogOut_1.style.display = 'none';
         btnLogOut_2.style.display = 'block';
@@ -114,7 +125,7 @@ function editWindowsLogOutItems(){
     }
 }
 
-function editWindowsRegAndAuthItems(){
+function editWindowsRegAndAuthItems() {
     if (window.innerWidth < 768 && (btnRegistration.style.display == 'block')) {
         btnRegistration.style.display = 'none';
         btnAuthorization.style.display = 'none';
@@ -130,7 +141,7 @@ function editWindowsRegAndAuthItems(){
 if (currentUser != "unauthorized") {
     editWindowsLogOutItems();
 }
-else{
+else {
     editWindowsRegAndAuthItems();
 }
 
@@ -138,7 +149,7 @@ window.addEventListener('resize', () => {
     if (currentUser != "unauthorized") {
         editWindowsLogOutItems();
     }
-    else{
+    else {
         editWindowsRegAndAuthItems();
     }
 })

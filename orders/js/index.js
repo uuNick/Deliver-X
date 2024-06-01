@@ -245,7 +245,7 @@ function filterCards() {
         }
         return acc;
     }, []);
-    console.log(filteredData)
+    // console.log(filteredData)
     if (searchText == "") {
         viewProductsData = filteredProducts
         displayItems(viewProductsData);
@@ -291,6 +291,7 @@ function getCategory(event) {
 
 function buttonFunction() {
     document.querySelector(".drop_down_content").classList.toggle("show_footer_menu");
+    document.querySelector(".drop_button").classList.toggle("open");
 }
 
 window.onclick = function (event) {

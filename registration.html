@@ -36,10 +36,6 @@
             </defs>
         </svg>
     </div>
-    <!-- <dialog id = "dialog_1">
-        <p class = "text_in_modal_for_un_user" data-lang="text_in_dealog_1">You have registered as</p>
-        <button class = "btn_in_dialog_1">Закрыть</button>
-    </dialog> -->
     <form id="registration_form" action="">
         <h1 data-lang="registration_text">Registration</h1>
         <div class="group">
@@ -95,7 +91,7 @@
             <div class="input_div">
                 <input type="password" id="first_password">
                 <button type="button" class="btn_password" data-target="#first_password">
-                    <img src="/registration/data/open_eye.svg">
+                    <img src="./registration/data/open_eye.svg">
                 </button>
                 <button type="button" class="random_btn" data-target="random_generate_password"
                     data-lang="random_generate_password_text">Generate
@@ -104,12 +100,12 @@
         </div>
         <div class="group">
             <div class="label_text">
-                <label data-lang="repeat_password_text">Repeat the password</label>
+                <label data-lang="repeat_password_text">Confrim password</label>
             </div>
             <div class="input_div">
                 <input type="password" id="second_password" onpaste="return false;">
                 <button type="button" class="btn_password" data-target="#second_password">
-                    <img src="/registration/data/open_eye.svg">
+                    <img src="./registration/data/open_eye.svg">
                 </button>
             </div>
         </div>
@@ -144,16 +140,9 @@
     </form>
     <script src="https://unpkg.com/imask"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="registration/js/phone.js"></script>
-    <script src="registration/js/date.js"></script>
-    <script src="registration/js/validation.js" type="module" defer></script>
-    <script src="registration/js/password.js"></script>
-    <script src="registration/js/random_generate.js" type="module" defer></script>
-    <script src="registration/js/roles.js"></script>
-    <script src="registration/js/modals.js"></script>
-    <script src="registration/js/user_agreement.js"></script>
+    <script src="./registration/js/app.js" type="module" defer></script>
     <script src="./js/another_page_theme.js"></script>
     <script src="./js/translate.js" type="module" defer></script>
-</body>
+</body >
 
-</html>
+</html >

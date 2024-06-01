@@ -7,16 +7,6 @@ var param = {
     freeMode: true,
     spaceBetween: 0,
 
-    // keyboard: {
-    //     enabled: true,
-    //     onlyInViewport: true,
-    // },
-
-    // navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    //   },
-
     mousewheel: {
         sensitivity: 0.8,
     },

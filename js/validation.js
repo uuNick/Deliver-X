@@ -65,7 +65,7 @@ document.querySelectorAll('input').forEach(el => {
 
 document.querySelector('.btn_send_in_modal').addEventListener('click', function (event) {
     event.preventDefault()
-    console.log('click')
+    // console.log('click')
     if (checkValidation(document.querySelector('.input_fields_in_modal')) == true) {
         document.querySelector('.text_in_modal_for_user').style.display = "block";
         document.querySelector("input#phone").disabled = true;
@@ -75,7 +75,7 @@ document.querySelector('.btn_send_in_modal').addEventListener('click', function 
 
 document.querySelector('.btn_send_in_modal_2').addEventListener('click', function (event){
     event.preventDefault()
-    console.log('click')
+    // console.log('click')
     if (checkValidation(document.querySelector('.input_fields_in_modal_2')) == true) {
         document.querySelector('.text_in_modal_for_admin').style.display = "block";
         document.querySelector("input#name").disabled = true;
@@ -94,7 +94,7 @@ function checkValidation(form) {
         if (input_element.id == "phone") {
             if (!(mask.masked.isComplete)) {
                 checkResult = false;
-                console.log(phoneInput.nextElementSibling)
+                // console.log(phoneInput.nextElementSibling)
                 if (!(phoneInput.nextElementSibling)) {
                     showError(input_element, errorMessages["required_field"][currentLanguage]);
                 }

@@ -77,7 +77,7 @@ async function getProducts() {
         if (!productsData.length) {
             const res = await fetch('../orders/data/products.json');
             if (!res.ok) {
-                console.log(1)
+                // console.log(1)
                 throw new Error(res.statusText);
             }
             productsData = await res.json();
@@ -160,7 +160,7 @@ function delProductBasket(event) {
     }
     else {
         document.querySelector('.basket_count').textContent = newBasket.length;
-        console.log(currentUser)
+        // console.log(currentUser)
         currentUser.basket = newBasket;
         setUsersLocalStorage(currentUser);
         setUserLocalStorage(currentUser);
@@ -223,7 +223,7 @@ function handleCartButtonClick(target, action) {
 }
 
 function handleCartCountChange(target) {
-    console.log("change")
+    // console.log("change")
     const cartProduct = target.closest('.cart_product');
     if (cartProduct) {
         const productId = cartProduct.dataset.productId;

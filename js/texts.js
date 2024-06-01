@@ -555,7 +555,7 @@ export const registrationText = {
     },
     "repeat_password_text": {
         ru: "Повторите пароль",
-        en: "Repeat the password",
+        en: "Confirm password",
     },
     "user-agreement_text": {
         ru: "Пользовательское соглашение",

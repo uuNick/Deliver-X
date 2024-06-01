@@ -1,0 +1,11 @@
+import "./another_page_theme.js";
+import "./burger_menu.js";
+import "./error_messages.js";
+import "./modals.js";
+import "./roles.js";
+import "./slider.js";
+import "./texts.js";
+import "./theme.js";
+import "./translate.js";
+import "./validation.js";
+import "./yandex_map.js";
