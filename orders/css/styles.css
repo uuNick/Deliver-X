@@ -1,4 +1,53 @@
-@import url('./fonts.css');
+/*------Colors catalog----------*/
+
+:root {
+    --bg-color-section: #FAFAFA;
+    /* --bg-comments-color: #DADADA; */
+    --bg-color: #FFF;
+    --text-color: #22262A;
+    --text-error-color: #fc6262;
+    --text-red-color: #FF5634;
+    --search-border-color: #ff6633;
+    --white-color: #FFF;
+    --svg-logo-text-color: #121212;
+}
+
+/*-------------Dark Theme--------------*/
+
+.dark{
+    --bg-color-section: #344756;
+    --bg-comments-color: #DADADA;
+    --bg-color: #2D384A;
+    --text-color: #FFF;
+    --white-color: #000218;
+    --svg-logo-text-color: #DADADA;
+}
+
+/*-------Full screen logo-------*/
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+svg path:nth-child(4) {
+    fill: var(--svg-logo-text-color);
+}
 
 html {
     font-size: 10px;
@@ -7,6 +56,7 @@ html {
 body {
     font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    background-color: var(--bg-color);
 }
 
 .header_wrapper {
@@ -17,7 +67,11 @@ body {
     height: 12em;
     max-width: 122.2em;
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0 4em;
+}
+
+.basket_inner svg path:nth-child(1), .home_icon path:nth-child(1){
+    fill: var(--svg-logo-text-color);
 }
 
 /*--------Поиск объектов------*/
@@ -44,11 +98,12 @@ body {
     border-radius: 20px;
     outline: none;
     width: 100%;
+    color: var(--text-color);
     transition: border-color 0.3s ease;
 }
 
 .input-field:focus {
-    border-color: #ff6633;
+    border-color: var(--search-border-color);
 }
 
 .submit-button {
@@ -85,17 +140,18 @@ body {
 .drop_down_content {
     display: none;
     position: absolute;
-    right: -48px;
-    background-color: #f1f1f1;
-    min-width: 160px;
+    left: -10px;
+    width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    background-color: var(--bg-color-section);
 }
 
 .drop_down_content p {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 0 16px;
+    margin: .7em auto;
     display: block;
     text-align: center;
 }
@@ -110,12 +166,14 @@ body {
 }
 
 .drop_button {
-    background-color: #F2F8FC;
     border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: var(--text-color);
 }
 
 .drop_button:hover {
-    background-color: #8c949d;
+    cursor: pointer;
 }
 
 
@@ -150,6 +208,7 @@ body {
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
+    margin-top: 60px;
 }
 
 .cards {
@@ -172,6 +231,7 @@ body {
 .number_num {
     font-size: 2.4em;
     margin: 0 20px;
+    color: var(--text-color);
 }
 
 .card {
@@ -183,6 +243,7 @@ body {
     border-radius: 4px;
     transition: 0.2s;
     position: relative;
+    background-color: var(--bg-comments-color);
 }
 
 .card:hover {
@@ -240,8 +301,7 @@ body {
     color: #606060;
 }
 
-.card_price--common::before {
-    content: "Цена";
+.text_price{
     font-weight: 400;
     font-size: 20px;
     color: #767272;
@@ -282,4 +342,30 @@ body {
     border: 1px solid #ff6633;
     background-color: #ff6633;
     color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .header_wrapper{
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+
+    .drop_down{
+        order: 2;
+    }
+
+    .input-wrapper{
+        order: 1;
+        width: 100%;
+    }
+
+    .header_icons{
+        order: 3;
+    }
+
+    .wrapper{
+        margin-top: 120px;
+        margin-bottom: 50px;
+    }
 }

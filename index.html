@@ -6,16 +6,43 @@
     <title>Delivery X</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="./data/favicon.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
+    <div id="splash-screen">
+        <svg class="svg_logo_1" xmlns="http://www.w3.org/2000/svg" width="161" height="48" viewBox="0 0 161 48"
+            fill="none">
+            <g clip-path="url(#clip0_2_7)">
+                <path
+                    d="M28.4634 9.65134C28.4634 8.3839 28.2138 7.12887 27.7288 5.95791C27.2437 4.78695 26.5328 3.72298 25.6366 2.82677C24.7404 1.93055 23.6764 1.21964 22.5055 0.734608C21.3345 0.24958 20.0795 -6.10906e-05 18.812 -6.10352e-05C17.5446 -6.09798e-05 16.2896 0.24958 15.1186 0.734608C13.9477 1.21964 12.8837 1.93055 11.9875 2.82677C11.0913 3.72298 10.3803 4.78695 9.89532 5.95791C9.4103 7.12887 9.16064 8.3839 9.16064 9.65134H13.0141C13.0141 8.88995 13.1641 8.13601 13.4555 7.43258C13.7469 6.72914 14.1739 6.08999 14.7123 5.5516C15.2507 5.01322 15.8898 4.58615 16.5933 4.29478C17.2967 4.0034 18.0507 3.85344 18.812 3.85344C19.5734 3.85344 20.3274 4.0034 21.0308 4.29477C21.7342 4.58615 22.3734 5.01322 22.9118 5.5516C23.4502 6.08999 23.8772 6.72914 24.1686 7.43258C24.46 8.13601 24.6099 8.88995 24.6099 9.65134H28.4634Z"
+                    fill="#121212" />
+                <path
+                    d="M31.7351 9.16064H6.21615C2.78306 9.16064 0 11.9437 0 15.3768V40.8958C0 44.3289 2.78306 47.1119 6.21615 47.1119H31.7351C35.1682 47.1119 37.9513 44.3289 37.9513 40.8958V15.3768C37.9513 11.9437 35.1682 9.16064 31.7351 9.16064Z"
+                    fill="#FF5634" />
+                <path
+                    d="M31.5715 27.9727C31.5715 29.6268 31.2457 31.2648 30.6127 32.793C29.9797 34.3212 29.0519 35.7097 27.8823 36.8794C26.7126 38.049 25.3241 38.9768 23.7959 39.6098C22.2677 40.2428 20.6297 40.5686 18.9756 40.5686C17.3215 40.5686 15.6836 40.2428 14.1554 39.6098C12.6272 38.9768 11.2386 38.049 10.069 36.8794C8.89934 35.7097 7.97154 34.3212 7.33854 32.793C6.70553 31.2648 6.37973 29.6268 6.37973 27.9727H11.4089C11.4089 28.9664 11.6046 29.9504 11.9849 30.8684C12.3651 31.7864 12.9225 32.6206 13.6251 33.3232C14.3278 34.0259 15.1619 34.5832 16.08 34.9635C16.998 35.3438 17.9819 35.5395 18.9756 35.5395C19.9693 35.5395 20.9533 35.3438 21.8713 34.9635C22.7893 34.5832 23.6235 34.0259 24.3261 33.3232C25.0288 32.6206 25.5861 31.7864 25.9664 30.8684C26.3467 29.9504 26.5424 28.9664 26.5424 27.9727H31.5715Z"
+                    fill="white" />
+                <path
+                    d="M47.8853 34.1104H54.2081C60.1453 34.1104 64.3605 30.4349 64.3605 25.2687C64.3605 20.1025 60.1453 16.4528 54.2081 16.4528H47.8853V34.1104ZM51.6635 30.6662V19.8969H54.6964C58.0634 19.8969 60.4538 22.133 60.4538 25.2687C60.4538 28.4301 58.0634 30.6662 54.6964 30.6662H51.6635ZM73.4526 31.1032C71.8847 31.1032 70.7281 30.1265 70.2912 28.6871H79.8782C79.8782 23.6752 77.4364 20.5138 73.2726 20.5138C69.3916 20.5138 66.4358 23.4181 66.4358 27.4277C66.4358 31.5144 69.5201 34.4188 73.4783 34.4188C75.4316 34.4188 77.7192 33.5963 78.9015 32.3626L76.5111 29.9209C75.7915 30.6148 74.5064 31.1032 73.4526 31.1032ZM73.4269 23.8294C74.9433 23.8294 75.92 24.6776 76.2798 25.9884H70.3426C70.8309 24.6519 72.0132 23.8294 73.4269 23.8294ZM82.4169 34.1104H86.1694V16.1443H82.4169V34.1104ZM91.3212 18.9973C92.4264 18.9973 93.326 18.072 93.326 16.9411C93.326 15.8873 92.4264 14.9363 91.3212 14.9363C90.1646 14.9363 89.265 15.8873 89.265 16.9411C89.265 18.072 90.1646 18.9973 91.3212 18.9973ZM89.4192 34.1104H93.1718V20.8222H89.4192V34.1104ZM100.894 34.1104H104.364L110.044 20.8222H106.138L102.642 29.7923L99.0695 20.8222H95.137L100.894 34.1104ZM117.478 31.1032C115.91 31.1032 114.754 30.1265 114.317 28.6871H123.904C123.904 23.6752 121.462 20.5138 117.298 20.5138C113.417 20.5138 110.461 23.4181 110.461 27.4277C110.461 31.5144 113.546 34.4188 117.504 34.4188C119.457 34.4188 121.745 33.5963 122.927 32.3626L120.537 29.9209C119.817 30.6148 118.532 31.1032 117.478 31.1032ZM117.452 23.8294C118.969 23.8294 119.945 24.6776 120.305 25.9884H114.368C114.856 24.6519 116.039 23.8294 117.452 23.8294ZM130.195 23.2896V20.8222H126.442V34.1104H130.195V27.7618C130.195 25.2687 131.968 23.6752 134.744 23.6752V20.5138C132.714 20.5138 131.069 21.5676 130.195 23.2896ZM160.28 16.4528H155.859L151.618 22.2358L147.378 16.4528H142.905L149.357 25.3201L142.905 34.1104H147.3L151.567 28.3273L155.782 34.1104H160.28L153.803 25.243L160.28 16.4528Z"
+                    fill="#121212" />
+            </g>
+            <defs>
+                <clipPath id="clip0_2_7">
+                    <rect width="161" height="48" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
     <header>
         <div class="header_wrapper flex align-center justify-content-space-between">
             <div id="logo">
                 <a href="#" class="logo_link=">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="161" height="48" viewBox="0 0 161 48" fill="none">
+                    <svg class="svg_logo_1" xmlns="http://www.w3.org/2000/svg" width="161" height="48"
+                        viewBox="0 0 161 48" fill="none">
                         <g clip-path="url(#clip0_2_7)">
                             <path
                                 d="M28.4634 9.65134C28.4634 8.3839 28.2138 7.12887 27.7288 5.95791C27.2437 4.78695 26.5328 3.72298 25.6366 2.82677C24.7404 1.93055 23.6764 1.21964 22.5055 0.734608C21.3345 0.24958 20.0795 -6.10906e-05 18.812 -6.10352e-05C17.5446 -6.09798e-05 16.2896 0.24958 15.1186 0.734608C13.9477 1.21964 12.8837 1.93055 11.9875 2.82677C11.0913 3.72298 10.3803 4.78695 9.89532 5.95791C9.4103 7.12887 9.16064 8.3839 9.16064 9.65134H13.0141C13.0141 8.88995 13.1641 8.13601 13.4555 7.43258C13.7469 6.72914 14.1739 6.08999 14.7123 5.5516C15.2507 5.01322 15.8898 4.58615 16.5933 4.29478C17.2967 4.0034 18.0507 3.85344 18.812 3.85344C19.5734 3.85344 20.3274 4.0034 21.0308 4.29477C21.7342 4.58615 22.3734 5.01322 22.9118 5.5516C23.4502 6.08999 23.8772 6.72914 24.1686 7.43258C24.46 8.13601 24.6099 8.88995 24.6099 9.65134H28.4634Z"
@@ -51,8 +78,8 @@
                         </li>
                         <li class="menu_item"> <a href="#about" class="menu_link" data-lang="header_about-title">
                                 About</a></li>
-                        <li class="menu_item"> <a href="#gallary" class="menu_link" data-lang="header_gallary-title">
-                                Gallary</a></li>
+                        <li class="menu_item"> <a href="#gallery" class="menu_link" data-lang="header_gallery-title">
+                                gallery</a></li>
                         <li class="menu_item"> <a href="#features" class="menu_link" data-lang="header_features-title">
                                 Features</a></li>
                         <li class="menu_item"> <a href="#tracking" class="menu_link" data-lang="header_tracking-title">
@@ -65,20 +92,25 @@
                             <input type="checkbox">
                             <span class="move"></span>
                         </label>
+                        <button class="register_button_2" onclick="switchPageOnRegistration()"
+                            data-lang="sign_up_text">Sign Up</button>
+                        <button class="log_out_button_2" data-lang="log_out_text">Log out</button>
                     </ul>
                 </nav>
                 <div class="header_buttons flex align-center">
-                    <button id="authorization_button" onclick="switchPageOnAuthorization()">Log In</button>
-                    <button id="register_button" onclick="switchPageOnRegistration()">Sign Up</button>
-                    <button id="log_out_button">Log out</button>
+                    <button class="authorization_button" onclick="switchPageOnAuthorization()"
+                        data-lang="log_in_text">Log In</button>
+                    <button class="register_button" onclick="switchPageOnRegistration()" data-lang="sign_up_text">Sign
+                        Up</button>
+                    <button class="log_out_button_1" data-lang="log_out_text">Log out</button>
                     <label class="switch">
                         <span><img src="data/light-mode.png" class="light_image"></span>
                         <span><img src="data/dark-mode.png" class="dark_image"></span>
                         <input type="checkbox">
                         <span class="move"></span>
                     </label>
-                    <button type="button" data-btn="ru">Ru</button>
-                    <button type="button" data-btn="en">En</button>
+                    <button type="button" class="languages_btn" data-btn="ru">Ru</button>
+                    <button type="button" class="languages_btn" data-btn="en">En</button>
                 </div>
             </div>
         </div>
@@ -96,8 +128,37 @@
                         palate, offering a tantalizing selection of dishes prepared with the freshest, highest-quality
                         ingredients.</p>
                     <div class="rectangle_with_buttons_in_inner_div_home">
-                        <button class="button_register_restaurant">Register restaurant</button>
-                        <button class="button_dowload_app" onclick="switchPageOnOrder()" data-lang="dowload_app">Catalog</button>
+                        <button class="button_register_restaurant" data-lang="register_restaurant">Register
+                            restaurant</button>
+                        <button class="button_dowload_app" onclick="switchPageOnOrder()"
+                            data-lang="catalog_text">Catalog</button>
+                    </div>
+                    <div class="modal_overlay">
+                        <div class="modal modal_1">
+                            <span class="close-button">x</span>
+                            <div class="p_text_in_modal">
+                                <p class="text_in_modal_for_un_user" data-lang="text_in_modal_1">To add a restaurant,
+                                    you
+                                    need to register or log in to your account</p>
+                            </div>
+                            <div class="input_fields_in_modal">
+                                <div class="group">
+                                    <div class="label_text">
+                                        <label for="email" data-lang="email_text">Email</label>
+                                    </div>
+                                    <div class="input_div"><input type="email" id="email"></div>
+                                </div>
+                                <div class="group">
+                                    <div class="label_text">
+                                        <label for="phone" data-lang="telephone_text">Telephone</label>
+                                    </div>
+                                    <div class="input_div"><input type="text" name="phone" id="phone"></div>
+                                </div>
+                                <button type="button" class="btn_send_in_modal" data-lang="send_button_text">Send</button>
+                                <p class="text_in_modal_for_user" data-lang="sended_rest_user_text">The site administration will contact you as soon as
+                                    possible</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="horisontal_line">
                     </div>
@@ -178,9 +239,9 @@
                         right to your doorstep, hot and fresh</p>
                 </div>
             </div>
-            <div class="rectangle_with_buttons_in_steps">
+            <div class="rectangle_with_buttons_in_steps flex">
                 <button class="button_register_restaurant" data-lang="register_restaurant">Register restaurant</button>
-                <button class="button_dowload_app" data-lang="dowload_app"
+                <button class="button_dowload_app" data-lang="catalog_text"
                     onclick="switchPageOnOrder()">Catalog</button>
             </div>
             <div class="horisontal_line">
@@ -240,57 +301,59 @@
                 <div class="rectangle_with_buttons_after_delivery_info">
                     <button class="button_register_restaurant" data-lang="register_restaurant">Register
                         restaurant</button>
-                    <button class="button_dowload_app" data-lang="dowload_app"
+                    <button class="button_dowload_app" data-lang="catalog_text"
                         onclick="switchPageOnOrder()">Catalog</button>
                 </div>
             </div>
         </section>
-        <section id="gallary" class="gallary">
-            <div class="gallary_div flex">
-                <div class="gallary_info">
-                    <p class="text_main_gallary_info" data-lang="gallary_text_1">A delicious burger is one tap away!</p>
-                    <p class="text_after_main_gallary_info" data-lang="gallary_text_2">Browse our diverse selection of
+        <section id="gallery" class="gallery">
+            <div class="gallery_div flex">
+                <div class="gallery_info">
+                    <p class="text_main_gallery_info" data-lang="gallery_text_1">A delicious burger is one tap away!</p>
+                    <p class="text_after_main_gallery_info" data-lang="gallery_text_2">Browse our diverse selection of
                         restaurants and discover
                         mouthwatering dishes that will satisfy your cravings</p>
-                    <button class="button_dowload_app button_dowload_app_gallary" data-lang="dowload_app"
+                    <button class="button_dowload_app button_dowload_app_gallery" data-lang="catalog_text"
                         onclick="switchPageOnOrder()">Catalog</button>
                 </div>
-                <div class="gallary_pictures flex">
-                    <div class="swiper_1 first_gallary_pictures_section">
+                <div class="gallery_pictures flex">
+                    <div class="swiper_1 first_gallery_pictures_section">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_256.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_262.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_259.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_265.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/additional_photo_2.jpg"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/additional_photo_4.jpg"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/additional_photo_5.png"></div>
                         </div>
                     </div>
-                    <div class="swiper_2 second_gallary_pictures_section">
+                    <div class="swiper_2 second_gallery_pictures_section">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_269.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_275.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_272.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/v2_278.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/additional_photo_3.png"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/additional_photo_6.jpg"></div>
-                            <div class="swiper-slide"><img class="photo_in_gallary_pictures_section"
+                            <div class="swiper-slide"><img class="photo_in_gallery_pictures_section"
                                     src="data/additional_photo_1.jpg"></div>
                         </div>
+                        <!-- <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> -->
                     </div>
                 </div>
             </div>
@@ -352,7 +415,7 @@
             </div>
             <div class="rectangle_with_buttons_in_features">
                 <button class="button_register_restaurant" data-lang="register_restaurant">Register restaurant</button>
-                <button class="button_dowload_app" data-lang="dowload_app"
+                <button class="button_dowload_app" data-lang="catalog_text"
                     onclick="switchPageOnOrder()">Catalog</button>
             </div>
         </section>
@@ -363,16 +426,20 @@
                     <img id="deliver_in_tracking_1" src="data/v2_397.png">
                 </div>
                 <div class="tracking_discript_1">
-                    <p class="text_main_discript text_descript_tracking">Hassle-free restaurant management</p>
-                    <p class="text_after_main_discript text_after_descript_tracking">In addition to our elite roster of
+                    <p class="text_main_discript text_descript_tracking" data-lang="tracking_main_text_1">Hassle-free
+                        restaurant management</p>
+                    <p class="text_after_main_discript text_after_descript_tracking" data-lang="tracking_text_1">In
+                        addition to our elite roster of
                         exclusive restaurant partners, we've also collaborated with renowned chefs, popular food
                         bloggers, and boundary-pushing culinary artists to curate a truly remarkable selection of
                         specialty items.</p>
                     <div class="div_in_tracking_discript flex">
                         <div><img src="data/order_managment_icon.svg"></div>
                         <div class="text_discript_icons">
-                            <p class="text_main_discript_in_tracking_icons">Order management</p>
-                            <p class="text_discript_in_tracking_icons">At Deliver X, we handle every aspect of order
+                            <p class="text_main_discript_in_tracking_icons" data-lang="tracking_point_text_1">Order
+                                management</p>
+                            <p class="text_discript_in_tracking_icons" data-lang="tracking_before_point_text_1">At
+                                Deliver X, we handle every aspect of order
                                 fulfillment so you can focus on crafting exceptional dining experiences for our
                                 customers.</p>
                         </div>
@@ -380,8 +447,10 @@
                     <div class="div_in_tracking_discript flex">
                         <div><img src="data/POS_integration_icon.svg"></div>
                         <div>
-                            <p class="text_main_discript_in_tracking_icons">POS integration</p>
-                            <p class="text_discript_in_tracking_icons">We seamlessly integrate with your existing
+                            <p class="text_main_discript_in_tracking_icons" data-lang="tracking_point_text_2">POS
+                                integration</p>
+                            <p class="text_discript_in_tracking_icons" data-lang="tracking_before_point_text_2">We
+                                seamlessly integrate with your existing
                                 point-of-sale (POS) system, ensuring a streamlined ordering and payment experience.</p>
                         </div>
                     </div>
@@ -389,14 +458,18 @@
             </div>
             <div class="div_tracking_2 flex justify-content-space-between">
                 <div class="tracking_discript_2">
-                    <p class=" text_main_discript text_descript_tracking_2">Super convenient for customers too</p>
-                    <p class="text_after_descript_tracking_2">Customers can easily place orders through your branded
+                    <p class=" text_main_discript text_descript_tracking_2" data-lang="tracking_main_text_2">Super
+                        convenient for customers too</p>
+                    <p class="text_after_descript_tracking_2" data-lang="tracking_text_2">Customers can easily place
+                        orders through your branded
                         mobile app, website, or over the phone. </p>
                     <div class="div_in_tracking_discript flex">
                         <div><img src="data/order_from_app_icon.svg"></div>
                         <div class="text_discript_icons">
-                            <p class="text_main_discript_in_tracking_icons">Order from app</p>
-                            <p class="text_discript_in_tracking_icons">The branded mobile app offers an easy-to-navigate
+                            <p class="text_main_discript_in_tracking_icons" data-lang="tracking_point_text_3">Order from
+                                app</p>
+                            <p class="text_discript_in_tracking_icons" data-lang="tracking_before_point_text_3">The
+                                branded mobile app offers an easy-to-navigate
                                 interface for browsing the menu, customizing orders, and completing the checkout process
                                 securely.</p>
                         </div>
@@ -404,8 +477,10 @@
                     <div class="div_in_tracking_discript flex">
                         <div><img src="data/delivery_tracking_icon.svg"></div>
                         <div>
-                            <p class="text_main_discript_in_tracking_icons">Delivery tracking</p>
-                            <p class="text_discript_in_tracking_icons">Once the order is picked up by the delivery
+                            <p class="text_main_discript_in_tracking_icons" data-lang="tracking_point_text_4">Delivery
+                                tracking</p>
+                            <p class="text_discript_in_tracking_icons" data-lang="tracking_before_point_text_4">Once the
+                                order is picked up by the delivery
                                 driver, customers receive live updates on the order's location and estimated time of
                                 arrival.</p>
                         </div>
@@ -421,13 +496,16 @@
             <div class="comments_div">
                 <div class="inner_div_comments flex justify-content-space-between">
                     <div class="text_in_div_under_comments">
-                        <p class="text_in_div_under_comments">What our clients say</p>
-                        <p class="text_after_main_discript additional_text_in_div_under_comments">"Working with this
+                        <p class="text_in_div_under_comments" data-lang="text_before_comments">What our clients say</p>
+                        <p class="text_after_main_discript additional_text_in_div_under_comments"
+                            data-lang="text_before_comments_2">"Working with this
                             company has been a pleasure from start to finish"</p>
                     </div>
                     <div class="rectangle_with_buttons_under_comments">
-                        <button class="button_register_restaurant">Register restaurant</button>
-                        <button class="button_dowload_app" onclick="switchPageOnOrder()">Catalog</button>
+                        <button class="button_register_restaurant" data-lang="register_restaurant">Register
+                            restaurant</button>
+                        <button class="button_dowload_app" onclick="switchPageOnOrder()"
+                            data-lang="catalog_text">Catalog</button>
                     </div>
                 </div>
                 <div class="div_comments flex justify-content-space-between">
@@ -435,14 +513,15 @@
                         <div class="info flex">
                             <img class="user_photo" src="data/user_1.png">
                             <div class="user_info">
-                                <p class="name_user">John Carter</p>
+                                <p class="name_user" data-lang="text_name_1">John Carter</p>
                                 <p class="location_user">Echo Park</p>
                             </div>
                             <div class="comments_subpicture">
                             </div>
                         </div>
                         <div class="user_comment">
-                            <p class="user_comment_text">The delivery was lightning fast! My food arrived piping hot and
+                            <p class="user_comment_text" data-lang="text_user_comment_1">The delivery was lightning
+                                fast! My food arrived piping hot and
                                 exactly as I ordered. Highly recommend this service</p>
                         </div>
                     </div>
@@ -450,14 +529,15 @@
                         <div class="info flex">
                             <img class="user_photo" src="data/user_2.png">
                             <div class="user_info">
-                                <p class="name_user">Sophie Moore</p>
+                                <p class="name_user" data-lang="text_name_2">Sophie Moore</p>
                                 <p class="location_user">Hollywood Hills</p>
                             </div>
                             <div class="comments_subpicture">
                             </div>
                         </div>
                         <div class="user_comment">
-                            <p class="user_comment_text">I've been a loyal customer for over a year now, and the
+                            <p class="user_comment_text" data-lang="text_user_comment_2">I've been a loyal customer for
+                                over a year now, and the
                                 consistent quality of the food and service is outstanding. This is my go-to for quick.
                             </p>
                         </div>
@@ -466,14 +546,15 @@
                         <div class="info flex">
                             <img class="user_photo" src="data/user_3.png">
                             <div class="user_info">
-                                <p class="name_user">Matt Cannon</p>
+                                <p class="name_user" data-lang="text_name_3">Matt Cannon</p>
                                 <p class="location_user">Little Tokyo</p>
                             </div>
                             <div class="comments_subpicture">
                             </div>
                         </div>
                         <div class="user_comment">
-                            <p class="user_comment_text">I appreciate how easy and convenient the
+                            <p class="user_comment_text" data-lang="text_user_comment_3">I appreciate how easy and
+                                convenient the
                                 ordering process is. The wide menu selection means I can find something the whole family
                                 will enjoy.</p>
                         </div>
@@ -482,14 +563,15 @@
                         <div class="info flex">
                             <img class="user_photo" src="data/user_4.png">
                             <div class="user_info">
-                                <p class="name_user">Lily Woods</p>
+                                <p class="name_user" data-lang="text_name_4">Lily Woods</p>
                                 <p class="location_user">Melsore Avenue</p>
                             </div>
                             <div class="comments_subpicture">
                             </div>
                         </div>
                         <div class="user_comment">
-                            <p class="user_comment_text">The driver was so friendly and courteous. He even offered to
+                            <p class="user_comment_text" data-lang="text_user_comment_4">The driver was so friendly and
+                                courteous. He even offered to
                                 bring the food right to my door. Stellar customer service from start to finish</p>
                         </div>
                     </div>
@@ -497,14 +579,15 @@
                         <div class="info flex">
                             <img class="user_photo" src="data/user_5.png">
                             <div class="user_info">
-                                <p class="name_user">Andy Smith</p>
+                                <p class="name_user" data-lang="text_name_5">Andy Smith</p>
                                 <p class="location_user">Koreatown</p>
                             </div>
                             <div class="comments_subpicture">
                             </div>
                         </div>
                         <div class="user_comment">
-                            <p class="user_comment_text">I placed a last-minute order for a dinner party, and they were
+                            <p class="user_comment_text" data-lang="text_user_comment_5">I placed a last-minute order
+                                for a dinner party, and they were
                                 able to deliver everything on time. Saved the day! Will definitely use again.</p>
                         </div>
                     </div>
@@ -512,29 +595,33 @@
                         <div class="info flex">
                             <img class="user_photo" src="data/user_6.png">
                             <div class="user_info">
-                                <p class="name_user">Emily Williams</p>
+                                <p class="name_user" data-lang="text_name_6">Emily Williams</p>
                                 <p class="location_user">Chinatown</p>
                             </div>
                             <div class="comments_subpicture">
                             </div>
                         </div>
                         <div class="user_comment">
-                            <p class="user_comment_text">This delivery service has become a lifesaver for me. The mobile
+                            <p class="user_comment_text" data-lang="text_user_comment_6">This delivery service has
+                                become a lifesaver for me. The mobile
                                 app makes ordering a breeze, and I love that I can track my order in real-time</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="gallary gallary_2">
-            <div class="inner_div_gallary_2 flex">
-                <div class="gallary_info_2">
-                    <p id="main_text_on_black_color">Start attracting more clients today</p>
-                    <p class="text_after_main_gallary_info">In today's competitive business landscape, effectively
+        <section class="gallery gallery_2">
+            <div class="inner_div_gallery_2 flex">
+                <div class="gallery_info_2">
+                    <p id="main_text_on_black_color" data-lang="gallery_2_main_text">Start attracting more clients today
+                    </p>
+                    <p class="text_after_main_gallery_info" data-lang="gallery_2_after_main_text">In today's competitive
+                        business landscape, effectively
                         attracting new clients is crucial for growth and success.</p>
-                    <button class="button_dowload_app button_dowload_app_gallary">Register restaurant</button>
+                    <button class="button_dowload_app button_dowload_app_gallery"
+                        data-lang="register_restaurant">Register restaurant</button>
                 </div>
-                <div class="gallary_pictures_2">
+                <div class="gallery_pictures_2">
                     <img class="picture_on_black_background_1" src="data/v2_619.png">
                     <img class="picture_on_black_background_2" src="data/v2_615.png">
                 </div>
@@ -568,57 +655,102 @@
                         </defs>
                     </svg>
                 </a>
-                <p id="discript_deliver_x">At Delivery X, we pride ourselves on providing a seamless and efficient
+                <p id="discript_deliver_x" data-lang="first_text_in_footer">At Delivery X, we pride ourselves on
+                    providing a seamless and efficient
                     logistics experience for businesses of all sizes.</p>
             </div>
             <div class="rectangle_with_buttons_in_deliver_x">
-                <button class="button_dowload_for_ios">Dowload for IOS</button>
-                <button class="button_dowload_app_for_android">Download for Android</button>
-                <button class="button_admin_panel" onclick="switchPageOnAdminPanel()">Admin panel</button>
-                <button class="button_add_admin" onclick="switchPageOnRegistration()">Add new admin</button>
+                <button class="button_dowload_for_ios" data-lang="dowload_for_ios">Dowload for IOS</button>
+                <button class="button_dowload_app_for_android" data-lang="dowload_for_android">Download for
+                    Android</button>
+                <button class="button_admin_panel" onclick="switchPageOnAdminPanel()" data-lang="admin_panel_text">Admin panel</button>
+                <button class="button_add_admin" onclick="switchPageOnRegistration()" data-lang="add_new_admin_text">Add new admin</button>
+                <button class="button_add_restaurant" data-lang="add_restaurant_text">Add restaurant</button>
+                <button class = "button_clear_local_storage" data-lang="btn_clear">Clear local storage</button>
+                <div class="modal_overlay_2">
+                    <div class="modal_2 modal_22">
+                        <span class="close-button-2">x</span>
+                        <div class="input_fields_in_modal_2">
+                            <div class="group">
+                                <div class="label_text">
+                                    <label for="name" data-lang="name_text_index">Name</label>
+                                </div>
+                                <div class="input_div"><input id="name" type="text"></div>
+                            </div>
+                            <div class="group">
+                                <div class="label_text">
+                                    <label for="address" data-lang="address_text">Address</label>
+                                </div>
+                                <div class="input_div"><input type="text" id="address"></div>
+                            </div>
+                            <button type="button" class="btn_send_in_modal_2" data-lang="confirm_button_index">Confirm</button>
+                            <p class="text_in_modal_for_admin" data-lang="added_new_rest_text">Added new restaurant</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="horisontal_line">
         </div>
         <div class="main_div_footer flex justify-content-space-between">
             <div class="footer_menu">
-                <h4 class="h4_item_in_footer">Menu</h4>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#home">Home</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#about">About</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#gallary">Gallary</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#features">Features</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#tracking">Tracking</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#comments">Comments</a></p>
+                <h4 class="h4_item_in_footer" data-lang="menu_text">Menu</h4>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#home"
+                        data-lang="header_home-title">Home</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#about"
+                        data-lang="header_about-title">About</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#gallery"
+                        data-lang="header_gallery-title">Gallery</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#features"
+                        data-lang="header_features-title">Features</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#tracking"
+                        data-lang="header_tracking-title">Tracking</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#comments"
+                        data-lang="header_comments-title">Comments</a></p>
             </div>
             <div class="utility_pages_footer">
-                <h4 class="h4_item_in_footer">Utility pages</h4>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#">Start here</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#">Styleguide</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#">Password protected</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#">404 Not found</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#">Licenses</a></p>
-                <p class="item_in_footer"><a class="link_item_in_footer" href="#">Changelog</a></p>
+                <div class="modal_overlay_3">
+                    <div class="modal_3 modal_33">
+                        <span class="close-button-3">x</span>
+                        <div class="map_1">
+
+                        </div>
+                        <div class = "map_2">
+
+                        </div>
+                    </div>
+                </div>
+                <h4 class="h4_item_in_footer" data-lang="utility_page_text">Utility pages</h4>
+                <p class="item_in_footer"><a class="link_item_in_footer rest_on_map" data-lang="restaurants_on_map">Restaurants on the map</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="mailto:nikitasidarenko@gmail.com" target="_blank">nikitasidarenko@gmail.com</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="tel:+375291234567">902 324 4458</a></p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="https://github.com/uuNick" target="_blank">GitHub</a>
+                </p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#" data-lang="license_text">Licenses</a>
+                </p>
+                <p class="item_in_footer"><a class="link_item_in_footer" href="#"
+                        data-lang="chenge_log_text">Changelog</a></p>
             </div>
             <div class="available_in_footer flex align-center">
-                <h4 class="h4_item_in_footer">Available in</h4>
+                <h4 class="h4_item_in_footer" data-lang="available_in_text">Available in</h4>
                 <div class="icons_available_in_1 flex">
                     <div class="one_icon_div_in_footer flex align-center">
                         <img class="photo_icon_city_in_footer" src="data/San_Francisco.svg">
-                        <p class="icon_names_in_footer">San Francisco, CA</p>
+                        <p class="icon_names_in_footer" data-lang="text_city_1">San Francisco, CA</p>
                     </div>
                     <div class="one_icon_div_in_footer flex align-center">
                         <img class="photo_icon_city_in_footer" src="data/New_York.svg">
-                        <p class="icon_names_in_footer">New York, NY</p>
+                        <p class="icon_names_in_footer" data-lang="text_city_2">New York, NY</p>
                     </div>
                 </div>
                 <div class="icons_available_in_2 flex">
                     <div class="one_icon_div_in_footer flex align-center">
                         <img class="photo_icon_city_in_footer" src="data/Los_Angeles.svg">
-                        <p class="icon_names_in_footer">Los Angeles, CA</p>
+                        <p class="icon_names_in_footer" data-lang="text_city_3">Los Angeles, CA</p>
                     </div>
                     <div class="one_icon_div_in_footer flex align-center">
                         <img class="photo_icon_city_in_footer" src="data/Seattle.svg">
-                        <p class="icon_names_in_footer">Seattle, WA</p>
+                        <p class="icon_names_in_footer" data-lang="text_city_4">Seattle, WA</p>
                     </div>
                 </div>
             </div>
@@ -627,10 +759,10 @@
         </div>
         <div class="end_info">
             <p>
-                <span class="black_name_in_footer">Copyright © Deliver X | Designed by </span>
-                <span class="red_name_in_footer">BRIX Templates</span>
-                <span class="black_name_in_footer">-Powered by</span>
-                <span class="red_name_in_footer">Webflow</span>
+                <span class="black_name_in_footer" data-lang="coopering_text">Copyright © Deliver X | Designed by
+                </span>
+                <span class="red_name_in_footer">uuNick</span>
+                <a class = "black_name_in_footer link_on_github" href="https://github.com/uuNick" target="_blank">github</a>
             </p>
         </div>
     </footer>
@@ -640,6 +772,10 @@
     <script src="./js/theme.js"></script>
     <script src="./js/translate.js" type="module" defer></script>
     <script src="./js/roles.js"></script>
-</body>
+    <script src="./js/modals.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="./js/validation.js" type="module" defer></script>
+    <script src="./js/yandex_map.js"></script>
+</body> 
 
 </html>

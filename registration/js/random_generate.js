@@ -1,39 +1,55 @@
+"use strict"
+//==========================================
+import {
+    errorMessages,
+} from "./error_messages.js";
+
+import {
+    showError,
+    hideError,
+    checkValidPassword
+} from "./validation.js";
+
+
 var randomButtons = document.querySelectorAll(".random_btn");
 var inputNick = document.getElementById('nick');
 var firstPassword = document.getElementById("first_password");
 var secondPassword = document.getElementById("second_password");
 var countOnClick = 0;
-
+var currentLang = localStorage.getItem("language") || "en";
 
 randomButtons.forEach(function(btn){
     btn.onclick = function(){
-        //console.log(btn);
         let target = this.getAttribute('data-target');
         
         if(target === "random_generate_nick")
         {
-            if(inputNick.nextElementSibling.textContent === 'Обязательное поле' || inputNick.nextElementSibling.textContent === 'Никнейм занят'){
+            if(inputNick.nextElementSibling.tagName.toLowerCase() == 'span'){
                 inputNick.classList.remove("field_error");
                 inputNick.nextElementSibling.remove();
             }
         
             if(countOnClick < 5){
-                nickname = generateName();
+                let nickname = generateName();
                 inputNick.value = nickname;
                 countOnClick++;
             } else{
-                showError(inputNick, "Нельзя сгенерировать больше 5 никнеймов")
+                showError(inputNick, errorMessages["nickname_generate_length"][currentLang])
             }
         }
         if (target === "random_generate_password") {
-            if (firstPassword.nextElementSibling.textContent === 'Обязательное поле' && secondPassword.nextElementSibling.textContent === 'Обязательное поле') {
-                firstPassword.classList.remove("field_error");
-                firstPassword.nextElementSibling.remove();
-                secondPassword.classList.remove("field_error");
-                secondPassword.nextElementSibling.remove();
+            if (firstPassword.nextElementSibling.tagName.toLowerCase() == 'span' || secondPassword.nextElementSibling.tagName.toLowerCase() == 'span') {
+                if(firstPassword.nextElementSibling.tagName.toLowerCase() == 'span'){
+                    firstPassword.classList.remove("field_error");
+                    firstPassword.nextElementSibling.remove();
+                }
+                if(secondPassword.nextElementSibling.tagName.toLowerCase() == 'span'){
+                    secondPassword.classList.remove("field_error");
+                    secondPassword.nextElementSibling.remove();
+                }
             }
 
-            password = generatePassword();
+            var password = generatePassword();
             firstPassword.value = password;
             secondPassword.value = password;
         }
@@ -43,12 +59,12 @@ randomButtons.forEach(function(btn){
 
 function generatePassword() {
     var length = Math.floor(Math.random() * (20 - 8 + 1)) + 8;
-    lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-    uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    digits = "0123456789";
-    specialSymbols = "!._,<>#?";
-    charset = lowercaseLetters + uppercaseLetters + digits + specialSymbols;
-    returnValue = "";
+    var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var digits = "0123456789";
+    var specialSymbols = "!._,<>#?";
+    var charset = lowercaseLetters + uppercaseLetters + digits + specialSymbols;
+    var returnValue = "";
     var isValidPassword = false;
     for (var i = 0; i < length; i++) {
         returnValue += charset.charAt(Math.floor(Math.random() * charset.length))

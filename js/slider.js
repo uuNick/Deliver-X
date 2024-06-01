@@ -10,8 +10,12 @@ var param = {
     // keyboard: {
     //     enabled: true,
     //     onlyInViewport: true,
-    //     pageUpDown: true,
     // },
+
+    // navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   },
 
     mousewheel: {
         sensitivity: 0.8,
@@ -22,6 +26,7 @@ var param = {
             direction: "vertical",
             slidesPerView: 3,
             spaceBetween: 150,
+            
         },
         300:{
             direction: 'horizontal',

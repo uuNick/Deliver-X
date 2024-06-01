@@ -1,3 +1,28 @@
+/*------Colors authorization----------*/
+
+:root {
+    --bg-color-section: #FAFAFA;
+    /* --bg-comments-color: #DADADA; */
+    --bg-color: #FFF;
+    --text-color: #22262A;
+    --text-error-color: #fc6262;
+    --text-red-color: #FF5634;
+    --white-color: #FFF;
+    --svg-logo-text-color: #121212;
+}
+
+/*-------------Dark Theme--------------*/
+
+.dark{
+    --bg-color-section: #344756;
+    --bg-comments-color: #DADADA;
+    --bg-color: #2D384A;
+    --text-color: #FFF;
+    --white-color: #000218;
+    --svg-logo-text-color: #FFF;
+}
+
+
 /*---------Basic styles----------*/
 
 html{
@@ -5,20 +30,10 @@ html{
 }
 
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    background-color: var(--bg-color);
 }
-
-:root {
-    --bg-color-section: #FAFAFA;
-    --bg-comments-color: #DADADA;
-    --bg-color: #FFF;
-    --text-color: #22262A;
-    --text-error-color: #fc6262;
-    --text-red-color: #FF5634;
-    --white-color: #FFF;
-}
-
 
 h1{
     margin: 0;
@@ -28,14 +43,6 @@ h1{
     color:  var(--text-color);
     text-align: center;
     margin-bottom: 40px;
-}
-
-#registration_form{
-    background: #FAFAFA;
-    max-width: 700px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    margin: 200px auto;
 }
 
 button {
@@ -82,6 +89,31 @@ label{
     text-transform: uppercase;
 }
 
+/*-------Full screen logo-------*/
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+svg path:nth-child(4) {
+    fill: var(--svg-logo-text-color);
+}
 /*-------------Input Buttons styles---------------*/
 
 .input_buttons{
@@ -132,29 +164,17 @@ input:focus{
     margin-left: 10px;
 }
 
+/*--------Registration form--------*/
 
-/*-----------Choose authorization way styles----------*/
-
-
-
-
-/* .btn_password{
-    position: absolute;
-    width: 40px;
-    height: auto;
-    right: 5px;
-    top: 5px;
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    opacity: .4;
-    cursor: pointer;
+#registration_form{
+    background: var(--bg-color-section);
+    max-width: 700px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 200px auto;
 }
 
-.btn_password.active_password_btn{
-    opacity: 1;
-} */
-
+/*---------Button authorization---------*/
 
 .authorisation{
     cursor: pointer;
@@ -172,4 +192,19 @@ button.authorisation:hover{
     opacity: .8;
     font-weight: bold;
     transform: scale(1.1);
+}
+
+@media (max-width: 768px){
+    #registration_form{
+        max-width: 270px;
+    }
+
+    input{
+        width: 270px;
+        font-size: 14px;
+    }
+
+    .authorisation{
+        font-size: 16px;
+    }
 }

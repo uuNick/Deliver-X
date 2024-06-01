@@ -1,6 +1,12 @@
 "use strict"
 //==========================================
-import { ERROR_SERVER, NO_ITEMS_CART } from './constants.js';
+import { 
+    ERROR_SERVER_RU, 
+    ERROR_SERVER_EN,
+    NO_ITEMS_CART_EN, 
+    NO_ITEMS_CART_RU, 
+} from './constants.js';
+
 import {
     showErrorMessage,
     setBasketLocalStorage,
@@ -11,21 +17,39 @@ import {
     setUserLocalStorage
 } from './utils.js';
 
+import {
+    cardsText,
+} from "./cards_title.js";
+
+window.addEventListener('load', function() {
+    const splashScreen = document.getElementById('splash-screen');
+    splashScreen.classList.add('hide');
+  });
+
 let temp = localStorage.getItem('currentUser');
 let currentUser;
-if(temp == null){
+if (temp == null) {
     localStorage.setItem('currentUser', 'unauthorized')
     currentUser = 'unauthorized';
 }
-else{
-    if(temp == 'unauthorized'){
+else {
+    if (temp == 'unauthorized') {
         currentUser = 'unauthorized';
     }
-    else{
+    else {
         currentUser = JSON.parse(temp);
     }
 }
 
+
+function translateCards(data) {
+    let currentLanguage = localStorage.getItem("language") || "en";
+    if (currentLanguage == "en") {
+        data.forEach(item => {
+            item.title = cardsText[item.id + "Name"][currentLanguage];
+        })
+    }
+}
 
 const cart = document.querySelector('.cart');
 let productsData = [];
@@ -59,12 +83,19 @@ async function getProducts() {
             productsData = await res.json();
         }
 
-        console.log(productsData)
-        loadProductBasket(productsData)
+        translateCards(productsData);
+        loadProductBasket(productsData);
 
     } catch (err) {
-        showErrorMessage(ERROR_SERVER);
-        console.log(err);
+        let currentLanguage = localStorage.getItem("language") || "en"
+        if(currentLanguage == "ru"){
+            showErrorMessage(ERROR_SERVER_RU);
+            return;
+        }
+        else{
+            showErrorMessage(ERROR_SERVER_EN);
+            return;
+        }
     }
 }
 
@@ -72,14 +103,20 @@ function loadProductBasket(data) {
     cart.textContent = '';
 
     if (!data || !data.length) {
-        console.log(data)
-        showErrorMessage(ERROR_SERVER);
-        return;
+        let currentLanguage = localStorage.getItem("language") || "en"
+        if(currentLanguage == "ru"){
+            showErrorMessage(ERROR_SERVER_RU);
+            return;
+        }
+        else{
+            showErrorMessage(ERROR_SERVER_EN);
+            return;
+        }
     }
 
     checkingRelevanceValueBasket(data, currentUser);
     const basket = getBasketLocalStorage(currentUser);
-    if(currentUser != "unauthorized"){
+    if (currentUser != "unauthorized") {
 
         currentUser.basket = basket;
         setUsersLocalStorage(currentUser);
@@ -87,14 +124,21 @@ function loadProductBasket(data) {
     }
 
     if (!basket || !basket.length) {
-        showErrorMessage(NO_ITEMS_CART);
+        let currentLanguage = localStorage.getItem("language") || "en"
+        if(currentLanguage == "ru"){
+            showErrorMessage(NO_ITEMS_CART_RU);
         return;
+        }
+        else{
+            showErrorMessage(NO_ITEMS_CART_EN);
+        return;
+        }
     }
 
     const findProducts = data.filter(item => basket.includes(String(item.id)));
 
     if (!findProducts.length) {
-        showErrorMessage(NO_ITEMS_CART);
+        showErrorMessage(NO_ITEMS_CART_RU);
         return;
     }
 
@@ -111,10 +155,10 @@ function delProductBasket(event) {
     const basket = getBasketLocalStorage(currentUser);
 
     const newBasket = basket.filter(item => item !== id);
-    if(currentUser == "unauthorized"){
+    if (currentUser == "unauthorized") {
         setBasketLocalStorage(newBasket);
     }
-    else{
+    else {
         document.querySelector('.basket_count').textContent = newBasket.length;
         console.log(currentUser)
         currentUser.basket = newBasket;
@@ -198,7 +242,7 @@ function updatePrice(productId, countElement, priceElement) {
         countElement.value = '';
         count = 1
     }
-    else{
+    else {
         countElement.value = count;
     }
     priceElement.textContent = (parseFloat(selectedProduct.price) * count).toFixed(2);
@@ -207,17 +251,37 @@ function updatePrice(productId, countElement, priceElement) {
 const btnSend = document.querySelector(".btn-send");
 btnSend.addEventListener('click', send);
 
-function send(){
+function send() {
     let temp = localStorage.getItem('currentUser');
     let currentUser;
-    if(temp == 'unauthorized'){
+    if (temp == 'unauthorized') {
         currentUser = "unauthorized";
     }
-    else{
+    else {
         currentUser = JSON.parse(temp);
     }
 
-    if(currentUser == 'unauthorized'){
+    if (currentUser == 'unauthorized') {
         window.location.href = "./registration.html";
     }
+    else{
+        if(currentUser.basket.length == 0){
+            document.querySelector('#dialog_1').showModal();
+        }
+        else{
+            document.querySelector('#dialog_2').showModal();
+        }
+    }
 }
+
+const closeDialogBtn1 = document.querySelector(".btn_in_dialog_1");
+const closeDialogBtn2 = document.querySelector(".btn_in_dialog_2");
+
+closeDialogBtn1.addEventListener('click', () => {
+    document.querySelector('#dialog_1').close();
+})
+closeDialogBtn2.addEventListener('click', () => {
+    document.querySelector('#dialog_2').close();
+})
+
+

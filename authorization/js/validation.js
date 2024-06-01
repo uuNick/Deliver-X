@@ -1,5 +1,12 @@
-var users = JSON.parse(localStorage.getItem("users")) || [];
+"use strict"
+//==========================================
+import {
+    errorMessages
+} from "./error_messages.js";
 
+var users = JSON.parse(localStorage.getItem("users")) || [];
+var currentLanguage = localStorage.getItem("language") || "en";
+var currentUser
 
 function getUsers() {
     fetch("./registration/data/users.json")
@@ -23,9 +30,7 @@ document.getElementById('registration_form').addEventListener('submit', function
             }
             localStorage.setItem("currentUser", JSON.stringify(currentUser));
             const previousPageUrl = document.referrer;
-            // console.log(previousPageUrl);
-            // console.log(previousPageUrl.includes('registration'));
-            if(previousPageUrl.includes('registration')){
+            if(previousPageUrl.includes('registration') && currentUser.role != "admin"){
                 switchPageOnBasket();
             }
             else{
@@ -33,7 +38,7 @@ document.getElementById('registration_form').addEventListener('submit', function
             }
         }
         else {
-            showError(second_field, "Неправильный email, телефон, никнейм или пароль");
+            showError(second_field, errorMessages["uncorrect_date"][currentLanguage]);
         }
     }
 })
@@ -45,7 +50,7 @@ function checkValidation(form) {
         if (input_element.value.length == 0) {
             checkResult = false;
             if (!(input_element.nextElementSibling && input_element.nextElementSibling.textContent === "Обязательное поле")) {
-                showError(input_element, "Обязательное поле")
+                showError(input_element, errorMessages["required_field"][currentLanguage])
             }
         }
     })
@@ -75,9 +80,10 @@ function hideError(field, err) {
     })
 }
 
+
 function isUserInUsers(first_field, second_field) {
     for (let i = 0; i < users.length; i++) {
-        let phone = String(users[i].telephone).replaceAll(" ", "").replaceAll("-", "").replace("(", "").replace(")", "");;
+        let phone = String(users[i].telephone).replaceAll(" ", "").replaceAll("-", "").replace("(", "").replace(")", "");
         if (first_field == users[i].nick || first_field == phone || first_field == users[i].email) {
             if (second_field == users[i].password) {
                 currentUser = users[i];
@@ -100,3 +106,8 @@ function goBack(){
 function switchPageOnBasket(){
     window.location.href = "./basket.html";
 }
+
+window.addEventListener('load', function() {
+    const splashScreen = document.getElementById('splash-screen');
+    splashScreen.classList.add('hide');
+  });

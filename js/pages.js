@@ -13,3 +13,8 @@ function switchPageOnOrder(){
 function switchPageOnAdminPanel(){
   window.location.href = "./admin.html";
 }
+
+window.addEventListener('load', function() {
+  const splashScreen = document.getElementById('splash-screen');
+  splashScreen.classList.add('hide');
+});

@@ -2,19 +2,27 @@
 //==========================================
 
 // Вывод ошибки
+
+const errorObj = {
+    "go_to_products": {
+        ru: "Перейти к списку товаров!",
+        en: "Go to products list",
+    }
+}
+
 export function showErrorMessage(message) {
+    let lang = localStorage.getItem("language") || "en";
     const div = document.querySelector('.wrapper')
     const msg =
         `<div class="error">
             <p>${message}</p>
-            <p><a href="./orders.html">Перейти к списку товаров!</a></p>
+            <p><a href="./orders.html">${errorObj["go_to_products"][lang]}</a></p>
         </div>`;
     div.insertAdjacentHTML('afterend', msg);
 }
 
 // Получение id из LS
 export function getBasketLocalStorage(currentUser) {
-    console.log(currentUser)
     if (currentUser == 'unauthorized') {
         const cartDataJSON = localStorage.getItem('basket');
         if (cartDataJSON) {

@@ -12,9 +12,20 @@ import {
 
 import {
     COUNT_SHOW_CARDS_CLICK,
-    ERROR_SERVER,
-    NO_PRODUCTS_IN_THIS_CATEGORY
+    ERROR_SERVER_RU,
+    NO_PRODUCTS_IN_THIS_CATEGORY_RU,
+    ERROR_SERVER_EN, 
+    NO_PRODUCTS_IN_THIS_CATEGORY_EN
 } from './constants.js';
+
+import {
+    cardsText
+} from './cards_title.js';
+
+window.addEventListener('load', function() {
+    const splashScreen = document.getElementById('splash-screen');
+    splashScreen.classList.add('hide');
+});
 
 let temp = localStorage.getItem('currentUser');
 let currentUser;
@@ -38,30 +49,55 @@ btnCatalog.addEventListener('click', buttonFunction)
 let productsData = [];
 await getProducts();
 let viewProductsData = Array.from(productsData);
+let filteredProducts = Array.from(productsData);
+
+function translateCards(cards){
+    let currentLanguage = localStorage.getItem('language') || "en";
+    if(currentLanguage == "en"){
+        cards.forEach(item => {
+            item.title = cardsText[item.id + "Name"][currentLanguage];
+        })
+    }
+}
 
 async function getProducts() {
     try {
         if (!productsData.length) {
-            const res = await fetch('../orders/data/products.json');
+            const res = await fetch('./orders/data/products.json');
             if (!res.ok) {
                 throw new Error(res.statusText);
             }
             productsData = await res.json();
         }
 
-        productsData.sort(() => Math.random() - 0.5)
-        renderStartPage(productsData)
+        productsData.sort(() => Math.random() - 0.5);
+        translateCards(productsData);
+        renderStartPage(productsData);
 
     } catch (err) {
-        showErrorMessage(ERROR_SERVER);
-        console.log(err);
+        let currentLanguage = localStorage.getItem("language") || "en"
+        if(currentLanguage == "ru"){
+            showErrorMessage(ERROR_SERVER_RU);
+            return;
+        }
+        else{
+            showErrorMessage(ERROR_SERVER_EN);
+            return;
+        }
     }
 }
 
 function renderStartPage(data) {
     if (!data || !data.length) {
-        showErrorMessage(NO_PRODUCTS_IN_THIS_CATEGORY);
-        return;
+        let currentLanguage = localStorage.getItem("language") || "en"
+        if(currentLanguage == "ru"){
+            showErrorMessage(NO_PRODUCTS_IN_THIS_CATEGORY_RU);
+            return;
+        }
+        else{
+            showErrorMessage(NO_PRODUCTS_IN_THIS_CATEGORY_EN);
+            return;
+        }
     }
 
     const arrCards = data.slice(0, COUNT_SHOW_CARDS_CLICK);
@@ -81,7 +117,7 @@ function renderStartPage(data) {
 }
 
 function createCards(data) {
-
+    let currentLanguage = localStorage.getItem('language') || "en";
     document.querySelector(".cards").innerHTML = ""
 
     data.forEach(card => {
@@ -90,7 +126,7 @@ function createCards(data) {
             `
                 <div class="card" data-product-id="${id}">
                     <div class="card_top">
-                        <a href="/card.html?id=${id}" class="card_image">
+                        <a class="card_image">
                             <img
                                 src="./orders/data/${img}"
                                 alt="${title}"
@@ -99,10 +135,10 @@ function createCards(data) {
                     </div>
                     <div class="card_bottom">
                         <div class="card_prices">
-                            <div class="card_price card_price--common">${price}</div>
+                            <div class="card_price card_price--common"><span class = "text_price">${cardsText['price_text'][currentLanguage]}</span>${price}</div>
                         </div>
-                        <a href="/card.html?id=${id}" class="card_title">${title}</a>
-                        <button class="card_add">В корзину</button>
+                        <a class="card_title">${title}</a>
+                        <button class="card_add">${cardsText['inBasket_text_1'][currentLanguage]}</button>
                     </div>
                 </div>
             `
@@ -136,6 +172,7 @@ function handleCardClick(event) {
 }
 
 function checkingActiveButtons(basket) {
+    let currentLanguage = localStorage.getItem('language') || "en";
     const buttons = document.querySelectorAll('.card_add');
 
     buttons.forEach(btn => {
@@ -145,7 +182,7 @@ function checkingActiveButtons(basket) {
 
         btn.disabled = isInBasket;
         btn.classList.toggle('active', isInBasket);
-        btn.textContent = isInBasket ? "В корзине" : "В корзину";
+        btn.textContent = isInBasket ? cardsText["inBasket_text_2"][currentLanguage] : cardsText["inBasket_text_1"][currentLanguage];
     })
 }
 
@@ -178,7 +215,7 @@ function goToPreviousPage() {
 
 function goToNextPage() {
     let totalItems = viewProductsData.length;
-    console.log(totalItems)
+    // console.log(totalItems)
     if (currentPage * COUNT_SHOW_CARDS_CLICK < totalItems) {
         currentPage++;
         displayItems(viewProductsData);
@@ -202,14 +239,15 @@ function displayItems(data) {
 
 function filterCards() {
     const searchText = document.querySelector('.input-field').value.toLowerCase();
-    const filteredData = viewProductsData.reduce((acc, item) => {
+    const filteredData = filteredProducts.reduce((acc, item) => {
         if (item.title.toLowerCase().includes(searchText.toLowerCase())) {
             acc.push(item);
         }
         return acc;
     }, []);
+    console.log(filteredData)
     if (searchText == "") {
-        viewProductsData = productsData
+        viewProductsData = filteredProducts
         displayItems(viewProductsData);
         return;
     }
@@ -235,19 +273,20 @@ pDropDownButton.forEach((item) =>{
 
 function getCategory(event) {
     if(event.target.classList.contains("ddt_1")){
-        viewProductsData = productsData;
+        filteredProducts = productsData;
     }
     else if(event.target.classList.contains("ddt_2")){
-        viewProductsData = productsData.filter(item => item.type === 'burger');
+        filteredProducts = productsData.filter(item => item.type === 'burger');
     }
     else if(event.target.classList.contains("ddt_3")){
-        viewProductsData = productsData.filter(item => item.type === 'drink');
+        filteredProducts = productsData.filter(item => item.type === 'drink');
     }
     else if(event.target.classList.contains("ddt_4")){
-        viewProductsData = productsData.filter(item => item.type === 'pizza');
+        filteredProducts = productsData.filter(item => item.type === 'pizza');
     }
     currentPage = 1;
-    displayItems(viewProductsData);
+    viewProductsData = filteredProducts;
+    displayItems(filteredProducts);
 }
 
 function buttonFunction() {
@@ -266,4 +305,3 @@ window.onclick = function (event) {
         }
     }
 }
-

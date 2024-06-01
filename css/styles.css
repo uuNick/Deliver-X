@@ -1,5 +1,3 @@
-@import url('./fonts.css');
-
 :root {
     --bg-color-section: black;
     --bg-color-section-2: #FAFAFA;
@@ -16,7 +14,7 @@
 /*-------------Dark Theme--------------*/
 
 .dark {
-    --bg-color-section: #FFF;
+    --bg-color-section: #c3bebe;
     --bg-color-section-2: #344756;
     --bg-comments-color: #0A1F32;
     --bg-color: #2D384A;
@@ -48,18 +46,24 @@ body.lock {
 
 header {
     height: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 12px rgba(18, 18, 18, .06);
+    background-color: var(--bg-color);
 }
 
 button {
     padding: 1em 2em;
     margin: 0;
     border: 1px solid #ededed;
-    background-color: transparent;
+    background-color: var(--white-color);
+    /* background-color: transparent; */
     border-radius: .75rem;
     cursor: pointer;
     display: inline-block;
     font-size: 1.6em;
-    color: var(--bg-color-section);
+    color: var(--text-color);
     transform-origin: center center;
     transition: 240ms ease-out;
     text-align: center;
@@ -111,6 +115,27 @@ h4 {
     justify-content: space-between;
 }
 
+/*-------Full screen logo-------*/
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
 
 /*---------Burger menu------------*/
 
@@ -123,7 +148,6 @@ h4 {
     cursor: pointer;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 2em;
 }
 
 .menu_icon span {
@@ -131,7 +155,7 @@ h4 {
     width: 80%;
     transform: scale(1);
     background-color: var(--bg-color-section);
-    
+
 }
 
 .menu_icon::after,
@@ -142,7 +166,7 @@ h4 {
     width: 100%;
     transition: all .3s ease 0s;
     background-color: var(--bg-color-section);
-    
+
 }
 
 .menu_icon::before {
@@ -239,7 +263,7 @@ h4 {
 
 .switch input,
 .switch_2 input {
-    opacity: 1;
+    opacity: 0;
     width: 0;
     height: 0;
 }
@@ -303,18 +327,211 @@ svg path:nth-child(4) {
     fill: var(--svg-logo-text-color);
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+    color: white;
+    --swiper-navigation-size: 30px;
+}
 
 header button {
     margin: 0.9em;
 }
 
-#register_button {
+.register_button,
+.register_button_2 {
     padding: 1em 1.5em;
     margin: 0 0.2em;
 }
 
-#log_out_button{
+.register_button_2 {
     display: none;
+}
+
+/*-----------------Modal-------------------*/
+
+.modal_overlay, .modal_overlay_2, .modal_overlay_3 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.modal, .modal_2{
+    background-color: var(--bg-color);
+    width: 300px;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    display: none;
+}
+
+.modal_3{
+    background-color: var(--bg-color);
+    width: 800px;
+    height: 600px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    display: none;
+}
+
+.modal_overlay--visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal_1--visible {
+    display: block;
+}
+
+.modal_1, .modal_22, .modal_33 {
+    position: relative;
+}
+
+.close-button, .close-button-2, .close-button-3 {
+    background: #606061;
+    color: #FFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus,
+.close-button-2:hover,
+.close-button-2:focus,
+.close-button-3:hover,
+.close-button-3:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text_in_modal_for_un_user, .text_in_modal_for_user, .text_in_modal_for_admin{
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 250px;
+    color: var(--text-color);
+}
+
+.text_in_modal_for_user{
+    display: none;
+    margin-top: 10px;
+    font-size: 1.6em;
+}
+
+.text_in_modal_for_admin{
+    margin-top: 10px;
+    font-size: 1.6em;
+    display: none;
+}
+
+/*------input fields in modal-----*/
+
+.input_fields_in_modal, .input_fields_in_modal_2{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+}
+
+input#email, input#phone, input#name, input#address {
+    height: 30px;
+    width: 190px;
+    border-radius: 20px/20px;
+    border: none;
+    font-size: 12px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    color: var(--text-color);
+    padding-left: 15px;
+}
+
+input#email:focus, input#phone:focus, input#name, input#address{
+    border: 1px solid #22262A;
+}
+
+
+.group {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.label_text {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 12px;
+    width: 70px;
+    color: var(--text-color);
+}
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+}
+
+.btn_send_in_modal, .btn_send_in_modal_2{
+    padding: 1em 1em;
+    font-size: 1.2em;
+    margin: 0 auto;
+}
+
+/*-------Show error in input fields------*/
+
+.field_error {
+    box-shadow: 1px 1px 1px var(--text-red-color);
+}
+
+.error_message {
+    color: var(--text-red-color);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/*--------Reg, Log in and Log out buttons--------------*/
+
+.log_out_button_1 {
+    display: none;
+}
+
+.log_out_button_2 {
+    display: none;
+    margin: 1.5em auto;
+    padding: 0.8em 1.5em;
+}
+
+.authorization_button {
+    margin: 0 0.5em;
+}
+
+.languages_btn {
+    margin: 0;
 }
 
 .header_wrapper {
@@ -446,6 +663,12 @@ p.text_after_main_discript {
     position: absolute;
     left: -11em;
     top: 14em;
+    filter: blur(2px);
+    transition: 1s;
+}
+
+#photo_2:hover{
+    filter: none;
 }
 
 div#icons_text_home {
@@ -611,19 +834,19 @@ div.horisontal_line {
     border-bottom: none;
 }
 
-.gallary {
+.gallery {
     background-color: var(--bg-color-section);
     margin: 0 -10.9em;
 }
 
 
-.gallary_info {
+.gallery_info {
     padding-top: 27.4em;
     padding-left: 10.9rem;
     padding-right: 7rem;
 }
 
-.text_main_gallary_info {
+.text_main_gallery_info {
     color: var(--white-color);
     font-size: 5.6em;
     font-style: normal;
@@ -634,7 +857,7 @@ div.horisontal_line {
     margin-bottom: 0;
 }
 
-.text_after_main_gallary_info {
+.text_after_main_gallery_info {
     color: var(--white-color);
     font-size: 1.2rem;
     font-style: normal;
@@ -644,7 +867,7 @@ div.horisontal_line {
     max-width: 541px;
 }
 
-.button_dowload_app_gallary {
+.button_dowload_app_gallery {
     margin-left: 0;
     margin-top: 1em;
     border-radius: 16px;
@@ -654,18 +877,18 @@ div.horisontal_line {
     line-height: 19.998px;
 }
 
-.gallary_pictures {
+.gallery_pictures {
     height: 854px;
     overflow: hidden;
 }
 
-.photo_in_gallary_pictures_section {
+.photo_in_gallery_pictures_section {
     width: 32.3em;
     height: 30.5em;
     margin: 1rem 0 2rem 2rem;
 }
 
-.first_gallary_pictures_section {
+.first_gallery_pictures_section {
     width: auto;
 }
 
@@ -778,6 +1001,11 @@ div.horisontal_line {
     border-radius: 61px;
     left: 200px;
     top: 220px;
+    transition: all 1s;
+}
+
+#deliver_in_tracking_1:hover, #burger_in_tracking_2:hover{
+    transform: scale(1.2);
 }
 
 .text_descript_tracking {
@@ -873,6 +1101,7 @@ div.horisontal_line {
     border-radius: 61px;
     left: 65px;
     top: 230px;
+    transition: all 1s;
 }
 
 .comments {
@@ -964,7 +1193,7 @@ div.horisontal_line {
     margin-top: 1.5em;
 }
 
-.gallary_info_2 {
+.gallery_info_2 {
     padding-top: 18.5em;
     padding-left: 10.9rem;
     padding-right: 7rem;
@@ -974,12 +1203,12 @@ div.horisontal_line {
     color: var(--white-color);
     font-size: 5.6em;
     line-height: 66.024px;
-    max-width: 460px;
+    max-width: 500px;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.gallary_pictures_2 {
+.gallery_pictures_2 {
     position: relative;
     width: 50%;
     height: 68em;
@@ -993,6 +1222,12 @@ div.horisontal_line {
     left: 3rem;
     top: -4rem;
     transform: rotate(-13deg);
+    transition: 1s;
+}
+
+.gallery_pictures_2:hover .picture_on_black_background_1{
+    left: 30em;
+    transform: rotate(13deg);
 }
 
 .picture_on_black_background_2 {
@@ -1002,6 +1237,12 @@ div.horisontal_line {
     right: 10rem;
     top: -4rem;
     transform: rotate(13deg);
+    transition: 1s;
+}
+
+.gallery_pictures_2:hover .picture_on_black_background_2{
+    right: 36em;
+    transform: rotate(-13deg);
 }
 
 .delivery_x_dowload {
@@ -1012,7 +1253,11 @@ div.horisontal_line {
     margin-bottom: 6.7em;
 }
 
-.button_add_admin{
+.button_add_admin {
+    display: none;
+}
+
+.button_add_restaurant{
     display: none;
 }
 
@@ -1064,7 +1309,7 @@ div.horisontal_line {
     line-height: 22px
 }
 
-.button_admin_panel{
+.button_admin_panel {
     display: none;
 }
 
@@ -1082,6 +1327,7 @@ div.horisontal_line {
 .link_item_in_footer {
     color: var(--text-gray-color);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .h4_item_in_footer {
@@ -1147,7 +1393,7 @@ div.horisontal_line {
     }
 
     .inner_div_home {
-        padding: 0 10px;
+        padding: 0;
         text-align: center;
     }
 
@@ -1155,7 +1401,7 @@ div.horisontal_line {
     #home,
     .features,
     .tracking {
-        padding: 0 10px;
+        padding: 0 5px;
     }
 
     .text_delicious_food {
@@ -1230,11 +1476,11 @@ div.horisontal_line {
         margin: 0 auto;
     }
 
-    .first_gallary_pictures_section {
+    .first_gallery_pictures_section {
         display: none;
     }
 
-    .gallary_div {
+    .gallery_div {
         justify-content: space-between;
     }
 
@@ -1246,7 +1492,7 @@ div.horisontal_line {
         margin: 2em;
     }
 
-    .second_gallary_pictures_section {
+    .second_gallery_pictures_section {
         display: flex;
         flex-direction: column;
         margin-right: 2em;
@@ -1320,20 +1566,20 @@ div.horisontal_line {
         max-width: none;
     }
 
-    .gallary {
+    .gallery {
         margin: 0 auto;
         width: 100%;
     }
 
-    .gallary_pictures_2 {
+    .gallery_pictures_2 {
         display: none;
     }
 
-    .gallary_2 {
+    .gallery_2 {
         height: 60em;
     }
 
-    .gallary_info_2 {
+    .gallery_info_2 {
         padding: 0;
         margin: 0 auto;
     }
@@ -1342,14 +1588,14 @@ div.horisontal_line {
         max-width: none;
     }
 
-    .inner_div_gallary_2 {
+    .inner_div_gallery_2 {
         text-align: center;
         height: 100%;
         align-items: center;
         margin: 0 auto;
     }
 
-    .text_after_main_gallary_info {
+    .text_after_main_gallery_info {
         max-width: none;
     }
 
@@ -1375,32 +1621,20 @@ div.horisontal_line {
         width: 9em;
     }
 
-    .gallary_info {
+    .gallery_info {
         padding-left: 50px;
         padding-right: 0;
     }
 
-    .gallary_pictures {
+    .gallery_pictures {
         margin: 0 auto;
         max-width: 100%;
     }
-
-    /*Swiper*/
-    /*Swiper*/
-
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
 
-
-    .header_wrapper {
-        margin: 0 20px;
-    }
-
-    .header_buttons {
-        order: 1;
-        margin-right: 10px;
-    }
+    /*------Burger menu------*/
 
     .body_menu {
         position: fixed;
@@ -1412,7 +1646,7 @@ div.horisontal_line {
         justify-content: right;
         transition: all .2s;
         overflow: auto;
-        background-color: white;
+        background-color: var(--bg-color);
     }
 
     .menu_list {
@@ -1437,7 +1671,33 @@ div.horisontal_line {
         display: block;
     }
 
-    .second_gallary_pictures_section {
+    /*------Language button--------*/
+
+    .languages_btn {
+        margin: 0 1em;
+    }
+
+    /*------Authorization button------*/
+
+    .authorization_button {
+        margin: 0 1em;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+
+    .header_wrapper {
+        margin: 0 20px;
+    }
+
+    .header_buttons {
+        order: 1;
+        margin-right: 10px;
+    }
+
+    .second_gallery_pictures_section {
         margin: 0;
         flex-direction: row;
     }
@@ -1446,21 +1706,21 @@ div.horisontal_line {
         width: 100%;
     }
 
-    .gallary_div {
+    .gallery_div {
         flex-direction: column;
     }
 
-    .gallary_info {
+    .gallery_info {
         text-align: center;
         margin-top: 10em;
         padding: 0;
     }
 
-    .text_main_gallary_info {
+    .text_main_gallery_info {
         width: auto;
     }
 
-    .gallary_pictures {
+    .gallery_pictures {
         height: auto;
         min-width: 0;
     }
@@ -1479,13 +1739,35 @@ div.horisontal_line {
         height: 40px;
     }
 
+    .modal_3{
+        width: 320px;
+        height: 400px;
+        padding: 30px 0;
+    }
+
+    .close-button-3{
+        right: 0;
+        top: 0;
+    }
+
+    /* background: #606061;
+    color: #FFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold; */
+
 }
 
-@media screen and (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 768px) {
 
     .picture_home,
     .about_delivery_picture,
-    .gallary_pictures_2 {
+    .gallery_pictures_2 {
         display: none;
     }
 
@@ -1514,7 +1796,7 @@ div.horisontal_line {
         margin-top: 5em;
     }
 
-    .gallary {
+    .gallery {
         margin: 0;
     }
 
@@ -1552,7 +1834,9 @@ div.horisontal_line {
     }
 
     .text_in_div_under_comments {
+        margin: 0 5px;
         margin-top: 50px;
+        line-height: 35px;
     }
 
     section.comments {
@@ -1563,9 +1847,10 @@ div.horisontal_line {
     .div_deliver_x_dowload {
         flex-wrap: wrap;
         text-align: center;
+        justify-content: center;
     }
 
-    .gallary_info {
+    .gallery_info {
         padding: 0
     }
 
@@ -1577,6 +1862,17 @@ div.horisontal_line {
         text-align: center;
         gap: 7em;
     }
+
+    .register_button_2 {
+        display: block;
+        margin: 1.5em auto;
+        padding: 0.8em 1.5em;
+    }
+
+    .register_button,
+    .authorization_button {
+        display: none;
+    }
 }
 
 @media (max-width: 500px) {
@@ -1584,8 +1880,14 @@ div.horisontal_line {
         width: 100px;
     }
 
-    .header_buttons {
+    .authorization_button,
+    .register_button {
         display: none;
+    }
+
+    .languages_btn {
+        font-size: 1.2em;
+        padding: 1em 1.2em;
     }
 
     .text_before_main_discript {
@@ -1610,6 +1912,10 @@ div.horisontal_line {
         padding: 14px 22px;
         font-weight: 400;
     }
+
+    /* .button_dowload_app{
+        margin-left: 0;
+    } */
 
     .statistic_in_inner_div_home {
         margin-top: 60px;
@@ -1694,17 +2000,17 @@ div.horisontal_line {
         padding-bottom: 100px;
     }
 
-    .gallary_info {
+    .gallery_info {
         margin-top: 50px;
     }
 
-    .text_main_gallary_info {
+    .text_main_gallery_info {
         font-size: 30px;
         line-height: 35px;
         font-weight: 600;
     }
 
-    .photo_in_gallary_pictures_section {
+    .photo_in_gallery_pictures_section {
         width: 20em;
         height: auto;
     }
@@ -1771,13 +2077,17 @@ div.horisontal_line {
         font-size: 16px;
     }
 
+    .comment_item {
+        height: auto;
+    }
+
     #main_text_on_black_color {
         font-size: 30px;
         font-weight: 600;
         line-height: 35px;
     }
 
-    .gallary_2 {
+    .gallery_2 {
         height: 30em;
     }
 
@@ -1827,5 +2137,56 @@ div.horisontal_line {
 
     .menu_list {
         line-height: 50px;
+    }
+
+    label.switch_2 {
+        width: 5em;
+        height: 2.5em;
+    }
+
+    span.move {
+        width: 5em;
+    }
+
+    span.move::before {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    input:checked+.move::before {
+        transform: translateX(2.8em);
+    }
+
+    .light_image {
+        top: .5em;
+        right: .35em;
+    }
+
+    .dark_image {
+        top: .5em;
+        left: .45em;
+    }
+
+    .dark_image,
+    .light_image {
+        width: 25px;
+        height: 25px;
+    }
+
+    .register_button_2 {
+        font-size: 1em;
+    }
+
+    .log_out_button_2 {
+        font-size: 1em;
+    }
+
+    .svg_logo_1 {
+        width: 120px;
+        height: 60px;
+    }
+
+    .header_buttons {
+        margin: 0;
     }
 }
