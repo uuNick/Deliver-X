@@ -1393,7 +1393,7 @@ div.horisontal_line {
 
 /*Slider*/
 
-@media screen and (min-width: 300px) and (max-width: 1440px) {
+@media screen and (min-width: 300px) and (max-width: 1439px) {
     main {
         max-width: 144em;
     }
