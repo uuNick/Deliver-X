@@ -75,7 +75,7 @@ cart.addEventListener('input', (event) => {
 async function getProducts() {
     try {
         if (!productsData.length) {
-            const res = await fetch('../orders/data/products.json');
+            const res = await fetch('./orders/data/products.json');
             if (!res.ok) {
                 // console.log(1)
                 throw new Error(res.statusText);

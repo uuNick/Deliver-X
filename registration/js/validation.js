@@ -3,7 +3,10 @@
 import {
     errorMessages
 } from "./error_messages.js";
-
+import {
+    mask,
+    phoneInput
+} from "./phone.js";
 
 var users = JSON.parse(localStorage.getItem("users")) || [];
 let currentLanguage = localStorage.getItem('language') || "en";
@@ -47,10 +50,10 @@ document.querySelectorAll('input').forEach(el => {
             showError(el, errorMessages["uncorrect_email"][currentLanguage])
         }
         else if (el.classList.contains("date")) {
-            var currentYear = new Date().getFullYear();
-            var selectedYear = new Date(el.value).getFullYear();
+            var currentDate = new Date();
+            var selectedDate = new Date(el.value);
 
-            if (currentYear - selectedYear < 16) {
+            if (currentDate - selectedDate < 504921600000) {
                 showError(el, errorMessages["uncorrect_date"][currentLanguage])
             }
         }
@@ -92,7 +95,7 @@ document.getElementById('registration_form').addEventListener('submit', function
     if (checkValidation(this) == true) {
         // console.log("yes");
         if (checkRepeatData(this, users) == false) {
-            temp = localStorage.getItem("currentUser")
+            let temp = localStorage.getItem("currentUser")
             let currentUser;
             let currentRole;
             if (temp == "unauthorized") {

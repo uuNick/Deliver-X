@@ -60,6 +60,7 @@ button {
     display: inline-block;
     font-size: 1.6em;
     color: var(--text-color);
+    background-color: var(--white-color);
     transform-origin: center center;
     transition: 240ms ease-out;
     text-align: center;

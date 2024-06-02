@@ -182,14 +182,14 @@ body {
 }
 
 .drop_button::after {
-    content: '\2227';
+    content: '\2228';
     margin-left: 5px;
     font-size: 12px;
     transition: transform 0.3s ease;
 }
 
 .drop_button.open::after {
-    content: '\2228';
+    content: '\2227';
 }
 
 
