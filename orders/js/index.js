@@ -325,6 +325,8 @@ inputField.addEventListener('input', () => {
 clearButton.addEventListener('click', () => {
   // Очищаем значение инпут поля
   inputField.value = '';
+  viewProductsData = filteredProducts
+  displayItems(filteredProducts)
   // Скрываем крестик
   clearButton.style.display = 'none';
 });
