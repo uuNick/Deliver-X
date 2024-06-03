@@ -306,3 +306,25 @@ window.onclick = function (event) {
         }
     }
 }
+
+// Получаем элементы DOM
+const inputField = document.querySelector('.input-field');
+const clearButton = document.querySelector('.clear-button');
+
+// Добавляем обработчик событий на инпут поле
+inputField.addEventListener('input', () => {
+  // Если в поле есть текст, показываем крестик
+  if (inputField.value.length > 0) {
+    clearButton.style.display = 'block';
+  } else {
+    clearButton.style.display = 'none';
+  }
+});
+
+// Добавляем обработчик событий на крестик
+clearButton.addEventListener('click', () => {
+  // Очищаем значение инпут поля
+  inputField.value = '';
+  // Скрываем крестик
+  clearButton.style.display = 'none';
+});

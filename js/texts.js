@@ -538,7 +538,7 @@ export const registrationText = {
         en: "Middle name",
     },
     "nickname_text": {
-        ru: "Логин",
+        ru: "Никнейм",
         en: "Nickname",
     },
     "random_generate_nick_text": {

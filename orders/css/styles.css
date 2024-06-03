@@ -131,6 +131,16 @@ body {
     transform: scale(1.2);
 }
 
+.clear-button{
+    position: absolute;
+    right: 40px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: .75rem;
+    display: none;
+}
+
 /*-----------------Каталог товаров-------------------*/
 
 .drop_down {
