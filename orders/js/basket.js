@@ -266,7 +266,12 @@ function send() {
     }
     else{
         if(currentUser.basket.length == 0){
-            document.querySelector('#dialog_1').showModal();
+            if(localStorage.getItem('bsket') == 0){
+                document.querySelector('#dialog_1').showModal();
+            }
+            else{
+                document.querySelector('#dialog_2').showModal();
+            }
         }
         else{
             document.querySelector('#dialog_2').showModal();

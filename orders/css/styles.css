@@ -99,7 +99,7 @@ body {
     border-radius: 20px;
     outline: none;
     width: 100%;
-    color: var(--text-color);
+    color: #22262A;
     transition: border-color 0.3s ease;
 }
 

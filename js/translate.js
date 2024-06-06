@@ -9,18 +9,18 @@ import {
     basketText,
 } from "./texts.js";
 
-const allLangs = ["ru", "en"];
+
 let currentLanguage = localStorage.getItem("language") || "en";
 const langButtons = document.querySelectorAll("[data-btn]");
 const currentPathName = window.location.pathname;
 let currentTextObject = {};
 
-function setNeedBtn(){
+function setNeedBtn() {
     langButtons.forEach(item => {
-        if(item.dataset.btn == currentLanguage){
+        if (item.dataset.btn == currentLanguage) {
             item.style.display = "none"
         }
-        else{
+        else {
             item.style.display = "block"
         }
     })
@@ -28,60 +28,59 @@ function setNeedBtn(){
 
 setNeedBtn();
 
-function checkPagePathName(){
-    switch(currentPathName){
-        case "/index.html":
-            currentTextObject = indexText;
-            break;
-        case "/authorization.html":
-            currentTextObject = authorizationText;
-            break;
-        case "/registration.html":
-            currentTextObject = registrationText;
-            break;
-        case "/admin.html":
-            currentTextObject = adminPanelText;
-            break;
-        case "/orders.html":
-            currentTextObject = catalogText;
-            break;
-        case "/basket.html":
-            currentTextObject = basketText;
-            break;
-        default:
-            currentTextObject = indexText;
-            break;
+function checkPagePathName() {
+    console.log(currentPathName);
+
+    if (currentPathName.includes("index.html")) {
+        currentTextObject = indexText;
+    }
+    else if (currentPathName.includes("authorization.html")) {
+        currentTextObject = authorizationText;
+    }
+    else if (currentPathName.includes("registration.html")) {
+        currentTextObject = registrationText;
+    }
+    else if (currentPathName.includes("admin.html")) {
+        currentTextObject = adminPanelText;
+    }
+    else if (currentPathName.includes("orders.html")) {
+        currentTextObject = catalogText;
+    }
+    else if (currentPathName.includes("basket.html")) {
+        currentTextObject = basketText;
+    }
+    else {
+        currentTextObject = indexText;
     }
 }
 
 checkPagePathName();
 
-function changeLang(){
+function changeLang() {
     for (const key in currentTextObject) {
         const elems = document.querySelectorAll(`[data-lang=${key}]`);
-        if(elems){
-            elems.forEach(item =>{
+        if (elems) {
+            elems.forEach(item => {
                 item.textContent = currentTextObject[key][currentLanguage];
             })
         }
     }
-    if(currentPathName == '/authorization.html'){
-        // console.log(currentTextObject["placeholder_1"][currentLanguage]);
+    if (currentPathName.includes("authorization.html")) {
         document.querySelector('.input_log_in_data').placeholder = currentTextObject["placeholder_1"][currentLanguage];
         document.querySelector('.password').placeholder = currentTextObject["placeholder_2"][currentLanguage];
     }
-    if(currentPathName == '/admin.html'){
+    if (currentPathName.includes("admin.html")) {
         document.querySelector(".input-field").placeholder = currentTextObject["placeholder_1"][currentLanguage];
     }
-    if(currentPathName == "/orders.html"){
+    if (currentPathName.includes("orders.html")) {
         document.querySelector(".input-field").placeholder = currentTextObject["placeholder"][currentLanguage];
     }
 }
 
 changeLang();
 
-langButtons.forEach((btn =>{
-    btn.addEventListener('click', (event) =>{
+langButtons.forEach((btn => {
+    btn.addEventListener('click', (event) => {
         currentLanguage = event.target.dataset.btn;
         localStorage.setItem('language', event.target.dataset.btn)
         reseatActiveClass(langButtons, 'header_btn_active')
@@ -91,7 +90,7 @@ langButtons.forEach((btn =>{
     });
 }));
 
-function reseatActiveClass(arr, activeClass){
+function reseatActiveClass(arr, activeClass) {
     arr.forEach(elem => {
         elem.classList.remove(activeClass);
     })

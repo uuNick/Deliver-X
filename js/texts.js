@@ -428,7 +428,7 @@ export const indexText = {
         en: "Menu",
     },
     "utility_page_text": {
-        ru: "Страницы с полезными программами",
+        ru: "Полезные страницы",
         en: "Utility pages",
     },
     "restaurants_on_map": {

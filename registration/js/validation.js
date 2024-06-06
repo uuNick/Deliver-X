@@ -154,7 +154,7 @@ function checkValidation(form) {
     let checkResult = true;
 
     form.querySelectorAll("input").forEach(input_element => {
-        if (input_element.type == "checkbox") {
+        if (input_element.type == "checkbox" || input_element.type == "hidden") {
             return;
         }
         if (input_element.id == "phone") {
